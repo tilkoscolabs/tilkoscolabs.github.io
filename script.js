@@ -1,49 +1,7 @@
 /* ═══════════════════════════════════════════
-   ShadowRecon Portfolio - JavaScript
-   Matrix Rain, Animations & Interactions
+   TilkoscoLabs Portfolio - JavaScript
+   Clean, Minimal Interactions
    ═══════════════════════════════════════════ */
-
-// ── Matrix Rain Effect ──
-const canvas = document.getElementById('matrix-rain');
-const ctx = canvas.getContext('2d');
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF<>/{}[]()=+-*&^%$#@!';
-const charArray = chars.split('');
-const fontSize = 14;
-let columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(1);
-
-function drawMatrix() {
-    ctx.fillStyle = 'rgba(10, 14, 23, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ff88';
-    ctx.font = `${fontSize}px monospace`;
-
-    for (let i = 0; i < drops.length; i++) {
-        const text = charArray[Math.floor(Math.random() * charArray.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-        }
-        drops[i]++;
-    }
-}
-
-setInterval(drawMatrix, 50);
-
-window.addEventListener('resize', () => {
-    resizeCanvas();
-    const newColumns = Math.floor(canvas.width / fontSize);
-    while (drops.length < newColumns) drops.push(1);
-    drops.length = newColumns;
-});
 
 // ── Typing Effect ──
 const roles = [
@@ -51,7 +9,6 @@ const roles = [
     'OSINT Analyst',
     'Penetration Tester',
     'Intelligence Analyst',
-    'Digital Forensics Specialist',
     'Threat Hunter',
 ];
 
@@ -74,7 +31,7 @@ function typeRole() {
     let speed = isDeleting ? 30 : 80;
 
     if (!isDeleting && charIndex === currentRole.length) {
-        speed = 2000;
+        speed = 2500;
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
@@ -89,16 +46,13 @@ typeRole();
 
 // ── Navbar Scroll ──
 const navbar = document.getElementById('navbar');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 50) {
+    if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-    lastScroll = currentScroll;
 });
 
 // ── Active Nav Link ──
@@ -147,7 +101,6 @@ function animateCounters() {
         function step(currentTime) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            // Ease out cubic
             const eased = 1 - Math.pow(1 - progress, 3);
             counter.textContent = Math.floor(eased * target);
             if (progress < 1) {
@@ -170,37 +123,21 @@ function animateSkillBars() {
     });
 }
 
-// ── Intersection Observer for Animations ──
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px',
-};
-
+// ── Intersection Observer ──
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-
-            // Trigger counters when hero stats are visible
-            if (entry.target.closest('.hero-stats') || entry.target.querySelector('.stat-number')) {
-                animateCounters();
-            }
-
-            // Trigger skill bars
-            if (entry.target.closest('#skills') || entry.target.querySelector('.skill-fill')) {
-                animateSkillBars();
-            }
         }
     });
-}, observerOptions);
+}, { threshold: 0.15 });
 
-// Observe elements
-document.querySelectorAll('.section, .hero-stats, .project-card, .cert-card, .info-card, .skill-category').forEach(el => {
+document.querySelectorAll('.section, .project-card, .cert-card, .info-card, .skill-category').forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
 });
 
-// Counter specific observer
+// Counter observer
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -213,7 +150,7 @@ const statsObserver = new IntersectionObserver((entries) => {
 const heroStats = document.querySelector('.hero-stats');
 if (heroStats) statsObserver.observe(heroStats);
 
-// Skills specific observer
+// Skills observer
 const skillsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -226,7 +163,7 @@ const skillsObserver = new IntersectionObserver((entries) => {
 const skillsSection = document.getElementById('skills');
 if (skillsSection) skillsObserver.observe(skillsSection);
 
-// ── Smooth Scroll for nav links ──
+// ── Smooth Scroll ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -236,8 +173,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// ── Console Easter Egg ──
-console.log('%c🕵️ ShadowRecon Portfolio', 'font-size: 24px; font-weight: bold; color: #00ff88;');
-console.log('%cBuilt by TilkoscoLabs | github.com/tilkoscolabs', 'color: #00d4ff;');
-console.log('%c⚠️  Curious enough to open DevTools? Good. That\'s the hacker mindset.', 'color: #ffbd2e;');
