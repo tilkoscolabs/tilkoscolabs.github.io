@@ -5,10 +5,10 @@
 
 // ── Typing Effect ──
 const roles = [
-    'Cybersecurity Researcher',
-    'OSINT Analyst',
-    'Penetration Tester',
     'Intelligence Analyst',
+    'OSINT Specialist',
+    'Digital Investigator',
+    'SOCMINT Researcher',
     'Threat Hunter',
 ];
 
