@@ -132,7 +132,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.section, .project-card, .cert-card, .info-card, .skill-category, .section-visual').forEach(el => {
+document.querySelectorAll('.section, .project-card, .cert-card, .info-card, .skill-category, .split-layout, .bento-section').forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
 });
