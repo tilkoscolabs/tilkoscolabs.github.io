@@ -943,3 +943,9 @@ body {
     filter: grayscale(0%);
     transform: scale(1.05);
 }
+
+/* ── Monochrome Emojis ── */
+.card-icon, .category-icon, .project-icon, .cert-icon {
+    filter: grayscale(100%) brightness(0.8) contrast(1.2);
+    opacity: 0.9;
+}
