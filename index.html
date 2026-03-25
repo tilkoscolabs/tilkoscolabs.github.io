@@ -31,6 +31,7 @@
             <li><a href="#about" class="nav-link">~/about</a></li>
             <li><a href="#skills" class="nav-link">~/skills</a></li>
             <li><a href="#projects" class="nav-link">~/projects</a></li>
+            <li><a href="#intelligence" class="nav-link">~/intel</a></li>
             <li><a href="#certifications" class="nav-link">~/certs</a></li>
             <li><a href="#contact" class="nav-link">~/contact</a></li>
         </ul>
@@ -298,8 +299,39 @@
         </div>
     </section>
 
+    <!-- Intelligence Briefs Section -->
+    <section class="section section-dark" id="intelligence">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">03.5</span> Declassified Briefs
+            </h2>
+            <div class="split-layout fade-in">
+                <div class="split-text">
+                    <h3 class="project-title" style="font-size: 1.5rem; margin-bottom: 8px;">Operation: Phantom Trace</h3>
+                    <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #ff4757; margin-bottom: 16px;">[ CLASSIFICATION: TLP:CLEAR ]</div>
+                    <p class="project-desc" style="font-size: 0.9rem;">A structured OSINT case study detailing the de-anonymization of a regional threat actor network through metadata correlation, target footprinting, and advanced geospatial analysis.</p>
+                    <div class="project-tags" style="margin-top: 15px;">
+                        <span class="tag-sm">Case Study</span>
+                        <span class="tag-sm">PDF Report</span>
+                        <span class="tag-sm">Threat Intel</span>
+                    </div>
+                    <div style="margin-top: 24px;">
+                        <a href="#" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.8rem;" onclick="alert('Report undergoing final redaction. Will be available soon.')">📥 Download Full Report (PDF)</a>
+                    </div>
+                </div>
+                <div class="split-image" style="background: var(--bg-terminal); display: flex; align-items: center; justify-content: center; padding: 40px; border: 1px dashed var(--border);">
+                    <div style="text-align: center; color: var(--text-secondary); font-family: var(--font-mono);">
+                        <div style="font-size: 3rem; margin-bottom: 20px;">📄</div>
+                        <div>INTEL_REPORT_OCT26.pdf</div>
+                        <div style="margin-top: 10px; font-size: 0.75rem; color: #ff4757;">Awaiting Redaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Certifications Section -->
-    <section class="section section-dark" id="certifications">
+    <section class="section" id="certifications">
         <div class="container">
             <h2 class="section-title">
                 <span class="section-number">04.</span> Certifications & Ranks
@@ -339,6 +371,11 @@
             <h2 class="section-title">
                 <span class="section-number">05.</span> Get In Touch
             </h2>
+            
+            <div class="fade-in" style="max-width: 700px; margin: 0 auto 50px auto; color: var(--text-secondary); font-style: italic; font-size: 0.95rem; line-height: 1.6; border-left: 3px solid var(--text-secondary); background: rgba(255,255,255,0.02); padding: 20px; border-radius: 4px;">
+                "All intelligence gathering and reconnaissance operations are conducted strictly within legal boundaries (White Hat) with an unwavering commitment to operational security (OPSEC) and national cyber defense."
+            </div>
+
             <div class="split-layout reverse fade-in">
                 <div class="split-text">
                     <div class="contact-content" style="max-width: 100%;">
@@ -352,7 +389,7 @@
                             <div class="terminal-body">
                                 <p class="terminal-line"><span class="prompt">$</span> <span class="command">echo "Let's connect"</span></p>
                                 <p class="contact-text">Interested in collaboration, security research, or intelligence analysis? Let's talk.</p>
-                                <div class="contact-links">
+                                <div class="contact-links" style="margin-bottom: 24px;">
                                     <a href="https://github.com/tilkoscolabs" target="_blank" class="contact-link">
                                         <span class="link-icon">◈</span>
                                         <span>github.com/tilkoscolabs</span>
@@ -361,6 +398,14 @@
                                         <span class="link-icon">✉</span>
                                         <span>tilkoscolabs@proton.me</span>
                                     </a>
+                                </div>
+                                <div class="pgp-block" style="margin-bottom: 20px; text-align: left;">
+                                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 8px;">[+] Secure Communications (PGP Public Key):</div>
+                                    <pre style="background: rgba(0,0,0,0.5); padding: 12px; border: 1px solid var(--border); border-radius: 4px; overflow-x: auto; font-size: 0.65rem; color: #aaa; font-family: var(--font-mono); line-height: 1.4;">-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQINBGYx8... [Key Block Placeholder] ...
+... Verify full key sequence via secure channel ...
+-----END PGP PUBLIC KEY BLOCK-----</pre>
                                 </div>
                                 <p class="terminal-line"><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
                             </div>
