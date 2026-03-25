@@ -860,14 +860,14 @@ body {
 }
 
 .arsenal-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
 }
 
 @media (min-width: 768px) {
     .arsenal-grid {
-        grid-template-columns: repeat(4, 1fr);
         gap: 24px;
     }
 }
@@ -883,6 +883,14 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    width: calc(50% - 8px); /* 2 per row on mobile */
+}
+
+@media (min-width: 768px) {
+    .tool-img-card {
+        flex: 0 1 calc(20% - 20px); /* 5 per row on desktop */
+        min-width: 180px;
+    }
 }
 
 .tool-img-card::after {
