@@ -96,9 +96,8 @@
             <h2 class="section-title">
                 <span class="section-number">01.</span> About Me
             </h2>
-            <img src="assets/images/metadata.jpg" alt="Data vs Metadata Analysis - OSINT" class="section-visual fade-in">
-            <div class="about-grid">
-                <div class="about-text">
+            <div class="split-layout fade-in">
+                <div class="split-text">
                     <div class="code-block">
                         <pre><code><span class="keyword">class</span> <span class="class-name">TilkoscoLabs</span>:
     <span class="keyword">def</span> <span class="func">__init__</span>(self):
@@ -116,7 +115,12 @@
         and intelligence analysis."</span></code></pre>
                     </div>
                 </div>
-                <div class="about-cards">
+                <div class="split-image">
+                    <img src="assets/images/metadata.jpg" alt="Data vs Metadata Analysis - OSINT">
+                </div>
+            </div>
+            
+            <div class="about-cards" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;">
                     <div class="info-card">
                         <div class="card-icon">🕵️</div>
                         <h3>OSINT Analyst</h3>
@@ -133,7 +137,6 @@
                         <p>Creating powerful Python-based reconnaissance frameworks and automation scripts for digital investigations.</p>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
 
