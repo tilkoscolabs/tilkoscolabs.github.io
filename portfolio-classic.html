@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TilkoscoLabs - Cybersecurity Researcher, OSINT Analyst & Penetration Tester. Building tools for digital intelligence and reconnaissance.">
+    <title>TilkoscoLabs | Cybersecurity Researcher & OSINT Analyst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrix-rain"></canvas>
+
+    <!-- Scan Line Effect -->
+    <div class="scanline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <span class="brand-bracket">[</span>
+            <span class="brand-text">tilkoscolabs</span>
+            <span class="brand-bracket">]</span>
+            <span class="cursor-blink">_</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">~/home</a></li>
+            <li><a href="#about" class="nav-link">~/about</a></li>
+            <li><a href="#skills" class="nav-link">~/skills</a></li>
+            <li><a href="#projects" class="nav-link">~/projects</a></li>
+            <li><a href="#intelligence" class="nav-link">~/intel</a></li>
+            <li><a href="#contact" class="nav-link">~/contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                    <span class="terminal-title">tilkoscolabs@kali:~</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="terminal-line"><span class="prompt">$</span> <span class="command">whoami</span></p>
+                    <h1 class="glitch-text" data-text="TilkoscoLabs">TilkoscoLabs</h1>
+                    <p class="terminal-line"><span class="prompt">$</span> <span class="command">cat role.txt</span></p>
+                    <p class="typing-text" id="typing-text"></p>
+                    <p class="terminal-line"><span class="prompt">$</span> <span class="command">cat mission.txt</span></p>
+                    <p class="hero-desc">Independent Intelligence Analyst based in the Kingdom of Morocco 🇲🇦. Building advanced OSINT frameworks and conducting digital cyber reconnaissance.</p>
+                    <p class="terminal-line">
+                        <span class="prompt">$</span> <span class="cursor-blink">_</span>
+                    </p>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <span class="btn-icon">⚡</span> View Projects
+                </a>
+                <a href="https://github.com/tilkoscolabs" target="_blank" class="btn btn-outline">
+                    <span class="btn-icon">◈</span> GitHub
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">OSINT Modules</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="70">0</span>
+                    <span class="stat-label">Platforms Covered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1226">0</span>
+                    <span class="stat-label">Lines of Code</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>scroll down</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">01.</span> About Me
+            </h2>
+            <div class="split-layout fade-in">
+                <div class="split-text">
+                    <div class="code-block">
+                        <pre><code><span class="keyword">class</span> <span class="class-name">TilkoscoLabs</span>:
+    <span class="keyword">def</span> <span class="func">__init__</span>(self):
+        self.<span class="attr">name</span>      = <span class="string">"TilkoscoLabs"</span>
+        self.<span class="attr">location</span>  = <span class="string">"Kingdom of Morocco 🇲🇦"</span>
+        self.<span class="attr">role</span>      = <span class="string">"Intelligence Analyst"</span>
+        self.<span class="attr">focus</span>     = [<span class="string">"OSINT"</span>, <span class="string">"SOCMINT"</span>,
+                         <span class="string">"REGINT"</span>, <span class="string">"NETINT"</span>]
+        self.<span class="attr">tools</span>     = [<span class="string">"Python"</span>, <span class="string">"Bash"</span>,
+                         <span class="string">"Kali Linux"</span>]
+        self.<span class="attr">passion</span>   = <span class="string">"Digital Intelligence"</span>
+
+    <span class="keyword">def</span> <span class="func">mission</span>(self):
+        <span class="keyword">return</span> <span class="string">"Building open-source tools
+        for ethical cyber reconnaissance
+        and intelligence analysis."</span></code></pre>
+                    </div>
+                </div>
+                <div class="split-image">
+                    <img src="assets/images/metadata.jpg" alt="Data vs Metadata Analysis - OSINT">
+                </div>
+            </div>
+            
+            <div class="about-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px;">
+                    <div class="info-card" style="background: rgba(10,10,12,0.8); border: 1px solid var(--border); border-top: 2px solid var(--accent-1); border-radius: 4px; padding: 25px; transition: all 0.3s ease;">
+                        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-1); margin-bottom: 12px; letter-spacing: 2px;">[ MODULE // 01 ]</div>
+                        <h3 style="font-family: var(--font-mono); font-size: 1.1rem; margin-bottom: 15px; text-transform: uppercase;">OSINT Analyst</h3>
+                        <div style="width: 30px; height: 1px; background: var(--border); margin-bottom: 15px;"></div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">Specialized in Open Source Intelligence gathering, digital footprint analysis, and target profiling using advanced reconnaissance techniques.</p>
+                    </div>
+                    <div class="info-card" style="background: rgba(10,10,12,0.8); border: 1px solid var(--border); border-top: 2px solid var(--accent-1); border-radius: 4px; padding: 25px; transition: all 0.3s ease;">
+                        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-1); margin-bottom: 12px; letter-spacing: 2px;">[ MODULE // 02 ]</div>
+                        <h3 style="font-family: var(--font-mono); font-size: 1.1rem; margin-bottom: 15px; text-transform: uppercase;">Intelligence Analyst</h3>
+                        <div style="width: 30px; height: 1px; background: var(--border); margin-bottom: 15px;"></div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">Gathering and analyzing actionable intelligence across diverse digital landscapes (NETINT, REGINT) to support strategic investigations.</p>
+                    </div>
+                    <div class="info-card" style="background: rgba(10,10,12,0.8); border: 1px solid var(--border); border-top: 2px solid var(--accent-1); border-radius: 4px; padding: 25px; transition: all 0.3s ease;">
+                        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-1); margin-bottom: 12px; letter-spacing: 2px;">[ MODULE // 03 ]</div>
+                        <h3 style="font-family: var(--font-mono); font-size: 1.1rem; margin-bottom: 15px; text-transform: uppercase;">Tool Developer</h3>
+                        <div style="width: 30px; height: 1px; background: var(--border); margin-bottom: 15px;"></div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">Creating powerful Python-based reconnaissance frameworks and automation scripts for digital and deep web investigations.</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-dark" id="skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">02.</span> Skills & Arsenal
+            </h2>
+            <img src="assets/images/Eys1.jpg" alt="Intelligence Gathering Visual" style="width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 40px; border-radius: 4px; border: 1px solid var(--border);">
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="category-icon">🔍</span> Intelligence Disciplines
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">OSINT</span><div class="skill-bar"><div class="skill-fill" data-width="98"></div></div></div>
+                        <div class="skill-item"><span class="skill-name">SOCMINT</span><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
+                        <div class="skill-item"><span class="skill-name">HUMINT</span><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+                        <div class="skill-item"><span class="skill-name">NETINT</span><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+                        <div class="skill-item"><span class="skill-name">REGINT</span><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="category-icon">💻</span> Programming & Scripting
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
+                        <div class="skill-item"><span class="skill-name">Bash / Shell</span><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+                        <div class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-fill" data-width="70"></div></div></div>
+                        <div class="skill-item"><span class="skill-name">HTML/CSS/JS</span><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="category-icon">🛠️</span> Tools & Platforms
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="tag">Kali Linux</span>
+                        <span class="tag">Maltego</span>
+                        <span class="tag">Shodan</span>
+                        <span class="tag">Censys</span>
+                        <span class="tag">Fofa</span>
+                        <span class="tag">Zoomeye</span>
+                        <span class="tag">Nmap</span>
+                        <span class="tag">Wireshark</span>
+                        <span class="tag">theHarvester</span>
+                        <span class="tag">SpiderFoot</span>
+                        <span class="tag">Recon-ng</span>
+                        <span class="tag">Amass</span>
+                        <span class="tag">Sherlock</span>
+                        <span class="tag">Maigret</span>
+                        <span class="tag">BlackWidow</span>
+                        <span class="tag">Holehe</span>
+                        <span class="tag">Toutatis</span>
+                        <span class="tag">IntelX</span>
+                        <span class="tag">DeHashed</span>
+                        <span class="tag">Snusbase</span>
+                        <span class="tag">TorBot</span>
+                        <span class="tag">OnionSearch</span>
+                        <span class="tag">Bellingcat Tools</span>
+                        <span class="tag">Google Dorking</span>
+                        <span class="tag">ExifTool</span>
+                        <span class="tag">Gephi</span>
+                        <span class="tag">Neo4j</span>
+                        <span class="tag accent">+200 Custom & Open-Source Tools</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="category-icon">🎯</span> Specializations
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="tag accent">OSINT</span>
+                        <span class="tag accent">SOCMINT</span>
+                        <span class="tag accent">NETINT</span>
+                        <span class="tag accent">REGINT</span>
+                        <span class="tag accent">HUMINT</span>
+                        <span class="tag accent">Target Profiling</span>
+                        <span class="tag accent">Dark Web Intelligence</span>
+                        <span class="tag accent">Breach Database Analysis</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OSINT Tools Bento Box -->
+            <div class="bento-section fade-in">
+                <h3 class="bento-heading">Mastered OSINT Tools</h3>
+                <div class="bento-grid">
+                    <div class="bento-card">
+                        <img src="assets/images/ghunt.jpg" alt="GHunt">
+                    </div>
+                    <div class="bento-card">
+                        <img src="assets/images/mosint.jpg" alt="Mosint">
+                    </div>
+                    <div class="bento-card">
+                        <img src="assets/images/theharvester.jpg" alt="TheHarvester">
+                    </div>
+                    <div class="bento-card">
+                        <img src="assets/images/h8mail.jpg" alt="h8mail">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">03.</span> Projects
+            </h2>
+            <div class="split-layout fade-in">
+                <div class="split-text">
+                    <h3 class="project-title" style="font-size: 1.5rem; margin-bottom: 8px;">ShadowRecon</h3>
+                    <p class="project-subtitle" style="font-size: 0.9rem; margin-bottom: 16px;">Advanced Multi-Module OSINT Reconnaissance Framework</p>
+                    <p class="project-desc" style="font-size: 0.9rem;">A powerful Python-based OSINT tool featuring username reconnaissance across 70+ platforms, email intelligence, domain analysis, and IP geolocation with VPN/Proxy detection.</p>
+                    <div class="project-features" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; margin-bottom: 20px; font-family: var(--font-mono); color: var(--text-secondary);">
+                        <span>[+] Username Recon (70+ platforms)</span>
+                        <span>[+] Email Intelligence</span>
+                        <span>[+] Domain Analysis</span>
+                        <span>[+] IP Geolocation</span>
+                        <span>[+] Report Generator</span>
+                    </div>
+                    <div class="project-tags" style="margin-bottom: 24px;">
+                        <span class="tag-sm">Python</span>
+                        <span class="tag-sm">AsyncIO</span>
+                        <span class="tag-sm">OSINT</span>
+                        <span class="tag-sm">CLI</span>
+                        <span class="tag-sm">DNS</span>
+                    </div>
+                    <div>
+                        <a href="https://github.com/tilkoscolabs/ShadowRecon" target="_blank" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.8rem;">◈ View on GitHub</a>
+                    </div>
+                </div>
+                <div class="split-image">
+                    <img src="assets/images/Farmework.jpg" alt="ShadowRecon Framework">
+                </div>
+            </div>
+
+            <div class="split-layout reverse fade-in" style="margin-top: 80px; margin-bottom: 80px;">
+                <div class="split-text">
+                    <h3 class="project-title" style="font-size: 1.5rem; margin-bottom: 8px;">Deep Web Operations</h3>
+                    <p class="project-subtitle" style="font-size: 0.9rem; margin-bottom: 16px;">Strategic Threat Intelligence, Darknet Recon & Breach Analysis</p>
+                    <p class="project-desc" style="font-size: 0.9rem;">Monitoring hidden services, tracking threat actors across overlay networks, and analyzing leaked breach databases to extract actionable intelligence. Specialized in correlating data from multiple breach dumps to identify compromised credentials, exposed infrastructure, and high-value targets.</p>
+                    <div class="project-features" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; margin-bottom: 20px; font-family: var(--font-mono); color: var(--text-secondary);">
+                        <span>[+] Breach Database Correlation</span>
+                        <span>[+] Credential Exposure Analysis</span>
+                        <span>[+] Darknet Forum Monitoring</span>
+                    </div>
+                    <div class="project-tags" style="margin-top: 15px;">
+                        <span class="tag-sm">Tor</span>
+                        <span class="tag-sm">I2P</span>
+                        <span class="tag-sm">OpSec</span>
+                        <span class="tag-sm">Breach Intel</span>
+                        <span class="tag-sm">Threat Hunting</span>
+                    </div>
+                </div>
+                <div class="split-image">
+                    <img src="assets/images/Hidden.jpg" alt="Deep Web Operations">
+                </div>
+            </div>
+
+            <div class="split-layout fade-in" style="margin-top: 80px;">
+                <div class="split-text">
+                    <h3 class="project-title" style="font-size: 1.5rem; margin-bottom: 8px;">Advanced Deep Search</h3>
+                    <p class="project-subtitle" style="font-size: 0.9rem; margin-bottom: 16px;">Next-Generation OSINT & SOCMINT Discovery</p>
+                    <p class="project-desc" style="font-size: 0.9rem;">Building automated crawlers and AI-driven analysis tools for massive data correlation across social media platforms, public directories, and structured breach dumps.</p>
+                    <div class="project-tags" style="margin-top: 15px;">
+                        <span class="tag-sm">Python</span>
+                        <span class="tag-sm">OSINT</span>
+                        <span class="tag-sm">SOCMINT</span>
+                        <span class="tag-sm">Data Mining</span>
+                    </div>
+                </div>
+                <div class="split-image">
+                    <img src="assets/images/DeepSearchAdvenced.png" alt="Advanced Deep Search">
+                </div>
+            </div>
+
+            <div class="split-layout reverse fade-in" style="margin-top: 80px;">
+                <div class="split-text">
+                    <h3 class="project-title" style="font-size: 1.5rem; margin-bottom: 8px;">Visual Intelligence & Graph Analysis</h3>
+                    <p class="project-subtitle" style="font-size: 0.9rem; margin-bottom: 16px;">SOCMINT Network Mapping & Entity Correlation</p>
+                    <p class="project-desc" style="font-size: 0.9rem;">Leveraging graph visualization techniques to map hidden relationships between threat actors, digital identities, and infrastructure nodes. Transforming raw OSINT data into actionable intelligence through visual link analysis.</p>
+                    <div class="project-features" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; margin-bottom: 20px; font-family: var(--font-mono); color: var(--text-secondary);">
+                        <span>[+] Entity Relationship Mapping</span>
+                        <span>[+] Social Network Graphing</span>
+                        <span>[+] Threat Actor Link Analysis</span>
+                    </div>
+                    <div class="project-tags" style="margin-top: 15px;">
+                        <span class="tag-sm">Maltego</span>
+                        <span class="tag-sm">Gephi</span>
+                        <span class="tag-sm">Neo4j</span>
+                        <span class="tag-sm">SpiderFoot</span>
+                        <span class="tag-sm">SOCMINT</span>
+                        <span class="tag-sm">NETINT</span>
+                        <span class="tag-sm">Link Analysis</span>
+                    </div>
+                </div>
+                <div class="split-image">
+                    <img src="assets/images/graphvisul.jpg" alt="Visual Intelligence Graph Analysis">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intelligence Briefs Section -->
+    <section class="section section-dark" id="intelligence">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">04.</span> Declassified Briefs
+            </h2>
+            <div class="split-layout fade-in">
+                <div class="split-text">
+                    <h3 class="project-title" style="font-size: 1.5rem; margin-bottom: 8px;">Operation: Phantom Trace</h3>
+                    <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #ff4757; margin-bottom: 16px;">[ CLASSIFICATION: TLP:CLEAR ]</div>
+                    <p class="project-desc" style="font-size: 0.9rem;">A structured OSINT case study detailing the de-anonymization of a regional threat actor network through metadata correlation, target footprinting, and advanced network analysis.</p>
+                    <div class="project-tags" style="margin-top: 15px;">
+                        <span class="tag-sm">Case Study</span>
+                        <span class="tag-sm">PDF Report</span>
+                        <span class="tag-sm">Threat Intel</span>
+                    </div>
+                    <div style="margin-top: 24px;">
+                        <a href="#" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.8rem;" onclick="alert('Report undergoing final redaction. Will be available soon.')">📥 Download Full Report (PDF)</a>
+                    </div>
+                </div>
+                <div class="split-image">
+                    <img src="assets/images/OpsecOsint.jpg" alt="OPSEC & Open Source Intelligence">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">05.</span> Get In Touch
+            </h2>
+            
+            <div class="fade-in" style="max-width: 700px; margin: 0 auto 50px auto; color: var(--text-secondary); font-style: italic; font-size: 0.95rem; line-height: 1.6; border-left: 3px solid var(--text-secondary); background: rgba(255,255,255,0.02); padding: 20px; border-radius: 4px;">
+                "All intelligence gathering and reconnaissance operations are conducted strictly within legal boundaries (White Hat) with an unwavering commitment to operational security (OPSEC) and national cyber defense."
+            </div>
+
+            <div class="split-layout reverse fade-in">
+                <div class="split-text">
+                    <div class="contact-content" style="max-width: 100%;">
+                        <div class="terminal-window contact-terminal">
+                            <div class="terminal-header">
+                                <div class="terminal-dot red"></div>
+                                <div class="terminal-dot yellow"></div>
+                                <div class="terminal-dot green"></div>
+                                <span class="terminal-title">contact@tilkoscolabs</span>
+                            </div>
+                            <div class="terminal-body">
+                                <p class="terminal-line"><span class="prompt">$</span> <span class="command">echo "Let's connect"</span></p>
+                                <p class="contact-text">Interested in collaboration, security research, or intelligence analysis? Let's talk.</p>
+                                <div class="contact-links" style="margin-bottom: 24px;">
+                                    <a href="https://github.com/tilkoscolabs" target="_blank" class="contact-link">
+                                        <span class="link-icon">◈</span>
+                                        <span>github.com/tilkoscolabs</span>
+                                    </a>
+                                    <a href="mailto:tilkoscolabs@proton.me" class="contact-link">
+                                        <span class="link-icon">✉</span>
+                                        <span>tilkoscolabs@proton.me</span>
+                                    </a>
+                                </div>
+                                <div class="pgp-block" style="margin-bottom: 20px; text-align: left;">
+                                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 8px;">[+] Secure Communications (PGP Public Key):</div>
+                                    <pre style="background: rgba(0,0,0,0.5); padding: 12px; border: 1px solid var(--border); border-radius: 4px; overflow-x: auto; font-size: 0.65rem; color: #aaa; font-family: var(--font-mono); line-height: 1.4;">-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQINBGYx8... [Key Block Placeholder] ...
+... Verify full key sequence via secure channel ...
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+                                </div>
+                                <p class="terminal-line"><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-image" style="display: flex; align-items: center; justify-content: center; background: var(--bg-terminal);">
+                    <img src="assets/images/TilkosLabs.jpg" alt="TilkosLabs Contact" style="object-fit: contain; padding: 20px; max-height: 350px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                <span class="footer-bracket">[</span>
+                Built with 🖤 by <strong>TilkoscoLabs</strong> | © 2026
+                <span class="footer-bracket">]</span>
+            </p>
+            <p class="footer-quote">"In the digital shadows, knowledge is the ultimate weapon."</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
