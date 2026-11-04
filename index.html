@@ -996,6 +996,62 @@ a{color:inherit;text-decoration:none}
   color: var(--text-dim);
 }
 
+
+.view[hidden] {
+  display: none !important;
+}
+.favbtn:focus, .nav a:focus, .tbtn:focus {
+  outline: none;
+}
+.arsenal-head-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 22px 24px;
+  margin: 18px 0 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.ahs-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--g);
+  margin-bottom: 4px;
+}
+.ahs-left h1 {
+  font-family: var(--font-mono);
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+.ahs-stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.ahs-stat {
+  text-align: right;
+}
+.ahs-stat b {
+  display: block;
+  font-size: 20px;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.ahs-stat span {
+  font-size: 10.5px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 </style>
 </head>
 <body>
@@ -1004,15 +1060,14 @@ a{color:inherit;text-decoration:none}
 <header class="topbar"><div class="wrap">
   <div class="brand mono"><span id="brandPrefix">tilkosco@osint:</span><span class="path" id="brandPath">~/arsenal</span><span class="cursor">_</span></div>
   <nav class="nav">
-    <!-- OSINT ARSENAL & GRAPH NAV (Clean & Isolated) -->
+    <!-- OSINT ARSENAL BAR -->
     <div class="nav-group" id="navArsenal">
       <a data-view="arsenal" class="active">~/arsenal</a>
       <a data-view="graph">~/graph</a>
-      <a data-view="showcase">~/showcase</a>
       <button class="favbtn" id="favBtn">★ favorites <span id="favCount">0</span></button>
       <a data-view="portfolio" class="nav-pill-switch">~/portfolio ↗</a>
     </div>
-    <!-- TILKOSCOLABS PORTFOLIO NAV (Clean & Isolated when in Portfolio) -->
+    <!-- TILKOSCOLABS PORTFOLIO BAR (OSINT Arsenal completely hidden) -->
     <div class="nav-group" id="navPortfolio" hidden>
       <a data-pfjump="pf-home" class="active">~/home</a>
       <a data-pfjump="pf-about">~/about</a>
@@ -1020,8 +1075,7 @@ a{color:inherit;text-decoration:none}
       <a data-pfjump="pf-projects">~/projects</a>
       <a data-pfjump="pf-intel">~/intel</a>
       <a data-pfjump="pf-contact">~/contact</a>
-      <a data-view="arsenal" class="nav-pill-switch">☍ ~/arsenal</a>
-      <a data-view="graph" class="nav-pill-switch">☍ ~/graph</a>
+      <a data-view="arsenal" class="nav-pill-switch" title="Return to OSINT Arsenal">← ~/osint</a>
     </div>
     <button class="tbtn" id="themeToggle">[light]</button>
   </nav>
@@ -1030,36 +1084,18 @@ a{color:inherit;text-decoration:none}
 <!-- ============ ARSENAL VIEW ============ -->
 <main class="view" id="view-arsenal">
 <div class="wrap">
-  <section class="hero hero-cover">
-    <div class="hero-bg"><img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/Eys1.jpg" alt="Intelligence gathering" loading="lazy"></div>
-    <div class="term hero-terminal">
-      <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title mono">osint_arsenal — bash</span></div>
-      <div class="term-body">
-        <div id="termBoot">
-        <p><span class="pr">$</span>whoami</p>
-        <p class="out identity-line"><span id="identity-text"></span><span class="cursor id-cursor">_</span></p>
-        <p class="out typing-line"><span id="typing-text"></span><span class="cursor">_</span></p>
-        </div>
-        <h1>OSINT ARSENAL</h1>
-        <p class="sub">Independent Intelligence Analyst based in the Kingdom of Morocco. Building advanced OSINT frameworks &amp; conducting digital cyber reconnaissance.</p>
-        <div class="hstats">
-          <div class="hstat"><b id="statTools">1623</b><span>tools</span></div>
-          <div class="hstat"><b>28</b><span>categories</span></div>
-          <div class="hstat"><b id="favStat">0</b><span>favorites</span></div>
-        </div>
-      </div>
+  <div class="arsenal-head-strip">
+    <div class="ahs-left">
+      <span class="ahs-badge">TILKOSCOLABS // OSINT ARSENAL</span>
+      <h1>Open-Source Intelligence Directory</h1>
     </div>
-  </section>
-
-  <section class="featured">
-    <div class="sec-head"><span class="sec-num mono">01.</span><h2 class="mono">Featured // Mastered Tools</h2><span class="line"></span></div>
-    <div class="bento">
-      <a class="bento-card" href="https://github.com/mxrch/GHunt" target="_blank" rel="noopener"><div class="thumb"><img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/ghunt.jpg" loading="lazy" alt="GHunt"></div><div class="meta"><b>GHunt</b><p>Google account &amp; Gmail OSINT</p></div></a>
-      <a class="bento-card" href="https://github.com/alpkeskin/mosint" target="_blank" rel="noopener"><div class="thumb"><img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/mosint.jpg" loading="lazy" alt="Mosint"></div><div class="meta"><b>Mosint</b><p>Automated email OSINT</p></div></a>
-      <a class="bento-card" href="https://github.com/laramies/theHarvester" target="_blank" rel="noopener"><div class="thumb"><img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/theharvester.jpg" loading="lazy" alt="theHarvester"></div><div class="meta"><b>theHarvester</b><p>Emails, subdomains &amp; names recon</p></div></a>
-      <a class="bento-card" href="https://github.com/khast3x/h8mail" target="_blank" rel="noopener"><div class="thumb"><img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/h8mail.jpg" loading="lazy" alt="h8mail"></div><div class="meta"><b>h8mail</b><p>Email breach hunting</p></div></a>
+    <div class="ahs-stats mono">
+      <div class="ahs-stat"><b id="statTools">2074</b><span>Tools</span></div>
+      <div class="ahs-stat"><b id="statCatsL">28</b><span>Categories</span></div>
+      <div class="ahs-stat"><b>39</b><span>MCP Servers</span></div>
+      <div class="ahs-stat"><b id="favStat">0</b><span>Favorites</span></div>
     </div>
-  </section>
+  </div>
 
   <section class="toolbar">
     <div class="search"><span class="pr">$</span><span class="mono" style="color:var(--text-dim)">grep</span><input id="q" placeholder="search tools by name, tag or description..." autocomplete="off"></div>
@@ -1221,13 +1257,14 @@ a{color:inherit;text-decoration:none}
 
       <div class="pf-cta-row">
         <a class="pf-cta-btn pri" data-pfjump="pf-projects">⚡ View Projects</a>
-        <a class="pf-cta-btn" data-switch="arsenal">☍ OSINT Arsenal (2,074)</a>
-        <a class="pf-cta-btn" data-switch="graph">☍ Interactive OSINT Graph</a>
         <a class="pf-cta-btn" href="https://github.com/tilkoscolabs" target="_blank" rel="noopener">◈ GitHub</a>
       </div>
 
       <div class="pf-stats-row">
         <div class="pf-stat-item"><b>4+</b><span>OSINT Modules</span></div>
+        <div class="pf-stat-item"><b>70+</b><span>Platforms Covered</span></div>
+        <div class="pf-stat-item"><b>1,226+</b><span>Lines of Code</span></div>
+      </div>
         <div class="pf-stat-item"><b>70+</b><span>Platforms Covered</span></div>
         <div class="pf-stat-item"><b>2,074</b><span>Arsenal Tools</span></div>
       </div>
@@ -1461,121 +1498,6 @@ mQINBGYx8... [Key Block Placeholder] ...
 </div>
 </main>
 
-<!-- ============ SHOWCASE VIEW ============ -->
-<main class="view" id="view-showcase" hidden>
-<div class="wrap">
-  <h2 class="sc-title"><span class="n">01.</span> Field Notes</h2>
-  <p class="sc-sub">tilkosco @ osint : ~/showcase &mdash; visual dossier from real OSINT capabilities. click any frame to open it full-size.</p>
-  <img class="sc-banner" src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/Eys1.jpg" loading="lazy" alt="Intelligence gathering">
-
-  <h2 class="sc-title"><span class="n">02.</span> Operations</h2>
-  <p class="sc-sub">selected reconnaissance & intelligence workflows.</p>
-<div class="split">
-  <div class="split-text">
-    <div class="ps" style="font-family:var(--font-mono);font-size:.7rem;color:var(--text-dim);letter-spacing:2px;margin-bottom:8px">OP // 001</div>
-    <h3 class="pt">ShadowRecon</h3>
-    <p class="ps">Advanced Multi-Module OSINT Reconnaissance Framework</p>
-    <p class="pd">A Python-based reconnaissance framework: username recon across 70+ platforms, email intelligence, domain analysis, and IP geolocation with VPN/Proxy detection.</p>
-    <div class="feat"><span><span class="k">[+]</span> Username Recon (70+ platforms)</span><span><span class="k">[+]</span> Email Intelligence</span><span><span class="k">[+]</span> Domain Analysis</span><span><span class="k">[+]</span> IP Geolocation</span><span><span class="k">[+]</span> Report Generator</span></div>
-    <div class="ptags"><span class="t">Python</span><span class="t">AsyncIO</span><span class="t">OSINT</span><span class="t">CLI</span><span class="t">DNS</span></div>
-  </div>
-  <div class="split-img" data-lb data-src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/Farmework.jpg" data-fn="Farmework.jpg" data-num="OP // 001" data-title="ShadowRecon" data-desc="A Python-based reconnaissance framework: username recon across 70+ platforms, email intelligence, domain analysis, and IP geolocation with VPN/Proxy detection." data-chips="#python #asyncio #osint #cli #dns">
-    <span class="exp">&#10530; expand</span>
-    <img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/Farmework.jpg" loading="lazy" alt="ShadowRecon">
-  </div>
-</div>
-<div class="split reverse">
-  <div class="split-text">
-    <div class="ps" style="font-family:var(--font-mono);font-size:.7rem;color:var(--text-dim);letter-spacing:2px;margin-bottom:8px">OP // 002</div>
-    <h3 class="pt">Deep Web Operations</h3>
-    <p class="ps">Threat Intelligence, Darknet Recon & Breach Analysis</p>
-    <p class="pd">Monitoring hidden services, tracking threat actors across overlay networks, and correlating leaked breach dumps to surface compromised credentials, exposed infrastructure and high-value targets.</p>
-    <div class="feat"><span><span class="k">[+]</span> Breach Database Correlation</span><span><span class="k">[+]</span> Credential Exposure Analysis</span><span><span class="k">[+]</span> Darknet Forum Monitoring</span></div>
-    <div class="ptags"><span class="t">Tor</span><span class="t">I2P</span><span class="t">OpSec</span><span class="t">Breach Intel</span><span class="t">Threat Hunting</span></div>
-  </div>
-  <div class="split-img" data-lb data-src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/Hidden.jpg" data-fn="Hidden.jpg" data-num="OP // 002" data-title="Deep Web Operations" data-desc="Monitoring hidden services, tracking threat actors across overlay networks, and correlating leaked breach dumps to surface compromised credentials, exposed infrastructure and high-value targets." data-chips="#tor #i2p #opsec #breach-intel #threat-hunting">
-    <span class="exp">&#10530; expand</span>
-    <img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/Hidden.jpg" loading="lazy" alt="Deep Web Operations">
-  </div>
-</div>
-<div class="split">
-  <div class="split-text">
-    <div class="ps" style="font-family:var(--font-mono);font-size:.7rem;color:var(--text-dim);letter-spacing:2px;margin-bottom:8px">OP // 003</div>
-    <h3 class="pt">Advanced Deep Search</h3>
-    <p class="ps">Next-Generation OSINT & SOCMINT Discovery</p>
-    <p class="pd">Automated crawlers and AI-driven analysis for massive data correlation across social platforms, public directories, and structured breach dumps.</p>
-    <div class="feat"><span><span class="k">[+]</span> Automated Crawlers</span><span><span class="k">[+]</span> AI-Driven Correlation</span><span><span class="k">[+]</span> Cross-Platform Discovery</span></div>
-    <div class="ptags"><span class="t">Python</span><span class="t">OSINT</span><span class="t">SOCMINT</span><span class="t">Data Mining</span></div>
-  </div>
-  <div class="split-img" data-lb data-src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/DeepSearchAdvenced.png" data-fn="DeepSearchAdvenced.png" data-num="OP // 003" data-title="Advanced Deep Search" data-desc="Automated crawlers and AI-driven analysis for massive data correlation across social platforms, public directories, and structured breach dumps." data-chips="#python #osint #socmint #data-mining">
-    <span class="exp">&#10530; expand</span>
-    <img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/DeepSearchAdvenced.png" loading="lazy" alt="Advanced Deep Search">
-  </div>
-</div>
-<div class="split reverse">
-  <div class="split-text">
-    <div class="ps" style="font-family:var(--font-mono);font-size:.7rem;color:var(--text-dim);letter-spacing:2px;margin-bottom:8px">OP // 004</div>
-    <h3 class="pt">Visual Intelligence & Graph Analysis</h3>
-    <p class="ps">SOCMINT Network Mapping & Entity Correlation</p>
-    <p class="pd">Graph visualization that maps hidden relationships between threat actors, digital identities and infrastructure nodes — turning raw OSINT into visual link analysis.</p>
-    <div class="feat"><span><span class="k">[+]</span> Entity Correlation</span><span><span class="k">[+]</span> Link Analysis</span><span><span class="k">[+]</span> Relationship Mapping</span></div>
-    <div class="ptags"><span class="t">Maltego</span><span class="t">Neo4j</span><span class="t">Gephi</span><span class="t">SOCMINT</span></div>
-  </div>
-  <div class="split-img" data-lb data-src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/graphvisul.jpg" data-fn="graphvisul.jpg" data-num="OP // 004" data-title="Visual Intelligence & Graph Analysis" data-desc="Graph visualization that maps hidden relationships between threat actors, digital identities and infrastructure nodes — turning raw OSINT into visual link analysis." data-chips="#maltego #neo4j #gephi #socmint">
-    <span class="exp">&#10530; expand</span>
-    <img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/graphvisul.jpg" loading="lazy" alt="Visual Intelligence & Graph Analysis">
-  </div>
-</div>
-<div class="split">
-  <div class="split-text">
-    <div class="ps" style="font-family:var(--font-mono);font-size:.7rem;color:var(--text-dim);letter-spacing:2px;margin-bottom:8px">OP // 005</div>
-    <h3 class="pt">OPSEC & Open-Source Intelligence</h3>
-    <p class="ps">Operational Security for Safe Collection</p>
-    <p class="pd">Building sanitized collection environments — burner identities, isolated VMs, and traffic controls — so investigations stay safe, attributable to nothing, and legally clean.</p>
-    <div class="feat"><span><span class="k">[+]</span> Attribution Management</span><span><span class="k">[+]</span> Isolated Collection</span><span><span class="k">[+]</span> Traffic Control</span></div>
-    <div class="ptags"><span class="t">OpSec</span><span class="t">Tradecraft</span><span class="t">Anonymity</span></div>
-  </div>
-  <div class="split-img" data-lb data-src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/OpsecOsint.jpg" data-fn="OpsecOsint.jpg" data-num="OP // 005" data-title="OPSEC & Open-Source Intelligence" data-desc="Building sanitized collection environments — burner identities, isolated VMs, and traffic controls — so investigations stay safe, attributable to nothing, and legally clean." data-chips="#opsec #tradecraft #anonymity">
-    <span class="exp">&#10530; expand</span>
-    <img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/OpsecOsint.jpg" loading="lazy" alt="OPSEC & Open-Source Intelligence">
-  </div>
-</div>
-<div class="split reverse">
-  <div class="split-text">
-    <div class="ps" style="font-family:var(--font-mono);font-size:.7rem;color:var(--text-dim);letter-spacing:2px;margin-bottom:8px">OP // 006</div>
-    <h3 class="pt">Data vs Metadata Analysis</h3>
-    <p class="ps">File & Image Forensic Enrichment</p>
-    <p class="pd">Pulling hidden context from files — EXIF, GPS, timestamps, authorship and device fingerprints that targets forget to strip before publishing.</p>
-    <div class="feat"><span><span class="k">[+]</span> EXIF & GPS Extraction</span><span><span class="k">[+]</span> Timestamp Analysis</span><span><span class="k">[+]</span> Device Fingerprinting</span></div>
-    <div class="ptags"><span class="t">ExifTool</span><span class="t">Forensics</span><span class="t">Metadata</span></div>
-  </div>
-  <div class="split-img" data-lb data-src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/metadata.jpg" data-fn="metadata.jpg" data-num="OP // 006" data-title="Data vs Metadata Analysis" data-desc="Pulling hidden context from files — EXIF, GPS, timestamps, authorship and device fingerprints that targets forget to strip before publishing." data-chips="#exiftool #forensics #metadata">
-    <span class="exp">&#10530; expand</span>
-    <img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/metadata.jpg" loading="lazy" alt="Data vs Metadata Analysis">
-  </div>
-</div>
-
-  <h2 class="sc-title"><span class="n">03.</span> Mastered Tools</h2>
-  <p class="sc-sub">core arsenal in daily use.</p>
-  <div class="sc-bento">
-<a class="bcard" href="https://github.com/mxrch/GHunt" target="_blank" rel="noopener"><div class="bf"><img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/ghunt.jpg" loading="lazy" alt="GHunt"></div><div class="bm"><b>GHunt</b><span>Google account & Gmail OSINT</span></div></a>
-<a class="bcard" href="https://github.com/alpkeskin/mosint" target="_blank" rel="noopener"><div class="bf"><img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/mosint.jpg" loading="lazy" alt="Mosint"></div><div class="bm"><b>Mosint</b><span>Automated email OSINT</span></div></a>
-<a class="bcard" href="https://github.com/laramies/theHarvester" target="_blank" rel="noopener"><div class="bf"><img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/theharvester.jpg" loading="lazy" alt="theHarvester"></div><div class="bm"><b>theHarvester</b><span>Emails, subdomains & names</span></div></a>
-<a class="bcard" href="https://github.com/khast3x/h8mail" target="_blank" rel="noopener"><div class="bf"><img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/h8mail.jpg" loading="lazy" alt="h8mail"></div><div class="bm"><b>h8mail</b><span>Email breach hunting</span></div></a>
-  </div>
-
-  <h2 class="sc-title"><span class="n">04.</span> Operator</h2>
-  <div class="op">
-    <img src="https://raw.githubusercontent.com/tilkoscolabs/tilkoscolabs.github.io/main/assets/images/TilkosLabs.jpg" loading="lazy" alt="TilkosLabs">
-    <div class="oc">
-      <h3>TilkoscoLabs</h3>
-      <p>OSINT analyst, intelligence researcher & tool developer. SOCMINT, breach intel, GEOINT and recon automation.</p>
-      <a href="https://tilkoscolabs.github.io/" target="_blank" rel="noopener">tilkoscolabs.github.io</a>
-    </div>
-  </div>
-</div>
-</main>
-
 <div class="lb" id="lb">
   <div class="lb-in">
     <div class="lb-bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="fn" id="lbFn"></span><button class="x" id="lbX">✕ close [esc]</button></div>
@@ -1644,18 +1566,30 @@ function render(){
   const n=favs.size;document.getElementById('favCount').textContent=n;document.getElementById('favStat').textContent=n;
 }
 function switchView(v){
-  ['arsenal','graph','showcase','portfolio'].forEach(x=>{const el=document.getElementById('view-'+x);if(el)el.hidden=(x!==v)});
+  ['arsenal','graph','portfolio'].forEach(x=>{
+    const el=document.getElementById('view-'+x);
+    if(el){
+      el.hidden=(x!==v);
+      el.style.display=(x===v)?'':'none';
+    }
+  });
   const isPf = (v === 'portfolio');
-  document.getElementById('navArsenal').hidden = isPf;
-  document.getElementById('navPortfolio').hidden = !isPf;
+  const navA = document.getElementById('navArsenal');
+  const navP = document.getElementById('navPortfolio');
+  if(navA){ navA.hidden = isPf; navA.style.display = isPf ? 'none' : 'flex'; }
+  if(navP){ navP.hidden = !isPf; navP.style.display = isPf ? 'flex' : 'none'; }
   document.getElementById('brandPrefix').textContent = isPf ? 'tilkoscolabs@kali:' : 'tilkosco@osint:';
   document.getElementById('brandPath').textContent = isPf ? '~/home' : ('~/' + v);
-  if(v !== 'arsenal' && favsOnly){
+  if(favsOnly){
     favsOnly = false;
-    document.getElementById('favBtn').classList.remove('on');
+    const fb = document.getElementById('favBtn');
+    if(fb){ fb.classList.remove('on'); fb.blur(); }
     render();
   }
-  document.querySelectorAll('#navArsenal a[data-view]').forEach(a=>a.classList.toggle('active',a.dataset.view===v));
+  document.querySelectorAll('#navArsenal a[data-view]').forEach(a=>a.classList.toggle('active',a.dataset.view===v && !favsOnly));
+  if(isPf){
+    document.querySelectorAll('#navPortfolio a[data-pfjump]').forEach((a,i)=>a.classList.toggle('active',i===0));
+  }
   if(v==='graph'&&window._initGraphView)setTimeout(window._initGraphView,20);
   window.scrollTo(0,0);
 }
@@ -1689,7 +1623,15 @@ function init(){
   typeIdentity(typeRole);
   document.getElementById('q').addEventListener('input',render);
   document.getElementById('themeToggle').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
-  document.getElementById('favBtn').addEventListener('click',e=>{favsOnly=!favsOnly;e.currentTarget.classList.toggle('on',favsOnly);if(favsOnly)switchView('arsenal');render()});
+  document.getElementById('favBtn').addEventListener('click',e=>{
+    const nextFav = !favsOnly;
+    if(document.getElementById('view-arsenal').hidden) switchView('arsenal');
+    favsOnly = nextFav;
+    e.currentTarget.classList.toggle('on', favsOnly);
+    e.currentTarget.blur();
+    document.querySelectorAll('#navArsenal a[data-view]').forEach(a=>a.classList.toggle('active', a.dataset.view==='arsenal' && !favsOnly));
+    render();
+  });
   document.querySelectorAll('.nav a[data-view]').forEach(a=>a.addEventListener('click',()=>switchView(a.dataset.view)));
   const lb=document.getElementById('lb');
   function openLB(el){document.getElementById('lbImg').src=el.dataset.src;document.getElementById('lbFn').textContent=el.dataset.fn||'';document.getElementById('lbNum').textContent=el.dataset.num||'';document.getElementById('lbTitle').textContent=el.dataset.title||'';document.getElementById('lbDesc').textContent=el.dataset.desc||'';document.getElementById('lbChips').innerHTML=(el.dataset.chips||'').split(' ').filter(Boolean).map(c=>`<span>${c}</span>`).join('');lb.classList.add('on')}
@@ -2374,6 +2316,24 @@ init();
       document.getElementById('brandPath').textContent = btn.textContent.trim();
     });
   });
+
+  
+  window.addEventListener('scroll', () => {
+    const pfView = document.getElementById('view-portfolio');
+    if(!pfView || pfView.hidden) return;
+    const secs = ['pf-home','pf-about','pf-skills','pf-projects','pf-intel','pf-contact'];
+    let cur = 'pf-home';
+    const sy = window.scrollY + 140;
+    secs.forEach(id => {
+      const el = document.getElementById(id);
+      if(el && el.offsetTop <= sy) cur = id;
+    });
+    document.querySelectorAll('#navPortfolio a[data-pfjump]').forEach(a => {
+      const match = (a.dataset.pfjump === cur);
+      a.classList.toggle('active', match);
+      if(match) document.getElementById('brandPath').textContent = a.textContent.trim();
+    });
+  }, { passive: true });
 
   document.querySelectorAll('[data-switch]').forEach(btn => {
     btn.addEventListener('click', e => {
