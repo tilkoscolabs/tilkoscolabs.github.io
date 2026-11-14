@@ -42,7 +42,9 @@ function typeRole() {
     setTimeout(typeRole, speed);
 }
 
-typeRole();
+if (typingElement) {
+    typeRole();
+}
 
 // ── Navbar Scroll ──
 const navbar = document.getElementById('navbar');
@@ -130,7 +132,7 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('visible');
         }
     });
-}, { threshold: 0.15 });
+}, { threshold: 0.02 });
 
 document.querySelectorAll('.section, .project-card, .info-card, .skill-category, .split-layout, .bento-section').forEach(el => {
     el.classList.add('fade-in');
