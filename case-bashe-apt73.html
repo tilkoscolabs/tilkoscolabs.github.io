@@ -42,8 +42,27 @@
             background: #000;
             padding: 14px;
         }
+        .neo4j-img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            display: block;
+        }
+        .terminal-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         @media (max-width: 860px) {
             .pillars-grid, .neo4j-grid { grid-template-columns: 1fr; }
+            .mobile-hide, .terminal-badge { display: none !important; }
+            .case-section-top { padding-top: 88px !important; padding-bottom: 60px !important; }
+            .case-main-title { font-size: 1.35rem !important; line-height: 1.35 !important; }
+            .case-summary { font-size: 0.85rem !important; margin-bottom: 22px !important; }
+            .neo4j-img { height: auto !important; aspect-ratio: 16 / 10; object-fit: contain !important; background: #000; }
+        }
+        @media (hover: none) {
+            .graph-hover-img { filter: grayscale(0%) contrast(1); }
         }
     </style>
 </head>
@@ -61,7 +80,7 @@
             <li><a href="index.html#about" class="nav-link">~/about</a></li>
             <li><a href="index.html#skills" class="nav-link">~/skills</a></li>
             <li><a href="index.html#projects" class="nav-link">~/projects</a></li>
-            <li><a href="declassified.html?v=23" class="nav-link active">~/intel</a></li>
+            <li><a href="declassified.html?v=24" class="nav-link active">~/intel</a></li>
             <li><a href="index.html#contact" class="nav-link">~/contact</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
@@ -69,21 +88,21 @@
         </button>
     </nav>
 
-    <section class="section section-dark" style="padding-top: 120px; padding-bottom: 90px;">
+    <section class="section section-dark case-section-top" style="padding-top: 120px; padding-bottom: 90px;">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 18px;">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <a href="declassified.html?v=23" class="btn btn-outline" style="padding: 7px 14px; font-size: 0.76rem;">← Back to Declassified Hub</a>
-                    <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-dim);">
+                    <a href="declassified.html?v=24" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.74rem;">← Back to Declassified Hub</a>
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim);">
                         <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">~/home</a> /
-                        <a href="declassified.html?v=23" style="color: var(--text-secondary); text-decoration: none;">~/intel</a> /
+                        <a href="declassified.html?v=24" style="color: var(--text-secondary); text-decoration: none;">~/intel</a> /
                         <span style="color: #fff;">case_02_apt73</span>
                     </span>
                 </div>
-                <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);">[ CASE 02 // TLP:AMBER // SUBMITTED TO maCERT / DGSSI ]</span>
+                <span class="mobile-hide" style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);">[ CASE 02 // TLP:AMBER // SUBMITTED TO maCERT / DGSSI ]</span>
             </div>
 
-            <h1 class="section-title" style="font-size: 1.8rem; margin-bottom: 14px;">
+            <h1 class="section-title case-main-title" style="font-size: 1.8rem; margin-bottom: 14px;">
                 <span class="section-number">02.</span> Bashe Group (APT73 / Eraleig) Attribution
             </h1>
             <p class="case-summary">
@@ -93,23 +112,23 @@
             <!-- Dual Monochrome Neo4j Knowledge Graph Showcase -->
             <div class="terminal-window" style="margin-bottom: 36px; border: 1px solid var(--border);">
                 <div class="terminal-header" style="justify-content: space-between;">
-                    <div style="display: flex; align-items: center; gap: 6px;">
-                        <div class="terminal-dot red"></div>
-                        <div class="terminal-dot yellow"></div>
-                        <div class="terminal-dot green"></div>
+                    <div style="display: flex; align-items: center; gap: 6px; min-width: 0; overflow: hidden;">
+                        <div class="terminal-dot red" style="flex-shrink: 0;"></div>
+                        <div class="terminal-dot yellow" style="flex-shrink: 0;"></div>
+                        <div class="terminal-dot green" style="flex-shrink: 0;"></div>
                         <span class="terminal-title">neo4j_browser // localhost:7474 — 87 NODES &amp; 111 RELATIONSHIPS</span>
                     </div>
-                    <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim);">[ HOVER TO REVEAL GRAPH COLORS // TLP:AMBER REDACTED ]</span>
+                    <span class="terminal-badge" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); flex-shrink: 0;">[ HOVER TO REVEAL GRAPH COLORS // TLP:AMBER REDACTED ]</span>
                 </div>
                 <div class="neo4j-grid">
                     <div style="display: flex; flex-direction: column; justify-content: space-between; background: #080808; border: 1px solid #1c1c1c; border-radius: 6px; overflow: hidden; text-decoration: none;">
-                        <img class="graph-hover-img" src="assets/images/apt73_safe_1.jpg" alt="Neo4j View 1 — AS9009 / IROKO Networks" style="width: 100%; height: 390px; object-fit: cover; display: block;">
+                        <img class="graph-hover-img neo4j-img" src="assets/images/apt73_safe_1.jpg" alt="Neo4j View 1 — AS9009 / IROKO Networks">
                         <div style="padding: 10px 14px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary); border-top: 1px solid #1a1a1a; background: #0d0d0d;">
                             [ FIG 2.1 ] AS9009 / IROKO Networks &amp; Entity Links (Nodes Redacted)
                         </div>
                     </div>
                     <div style="display: flex; flex-direction: column; justify-content: space-between; background: #080808; border: 1px solid #1c1c1c; border-radius: 6px; overflow: hidden; text-decoration: none;">
-                        <img class="graph-hover-img" src="assets/images/apt73_safe_2.jpg" alt="Neo4j View 2 — Full 87-Node / 111-Relationship Topology" style="width: 100%; height: 390px; object-fit: cover; display: block;">
+                        <img class="graph-hover-img neo4j-img" src="assets/images/apt73_safe_2.jpg" alt="Neo4j View 2 — Full 87-Node / 111-Relationship Topology">
                         <div style="padding: 10px 14px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary); border-top: 1px solid #1a1a1a; background: #0d0d0d;">
                             [ FIG 2.2 ] Full 87-Node / 111-Relationship Topology (TLP:AMBER)
                         </div>
@@ -140,8 +159,8 @@
 
             <!-- Bottom Navigation Bar -->
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 50px; padding-top: 28px; border-top: 1px solid var(--border);">
-                <a href="case-0x-whitfield.html?v=23" class="btn btn-outline">← Previous Dossier: Case 01 (0x [ Whitfield ])</a>
-                <a href="declassified.html?v=23" class="btn btn-primary">Back to Declassified Hub →</a>
+                <a href="case-0x-whitfield.html?v=24" class="btn btn-outline">← Previous Dossier: Case 01 (0x [ Whitfield ])</a>
+                <a href="declassified.html?v=24" class="btn btn-primary">Back to Declassified Hub →</a>
             </div>
         </div>
     </section>

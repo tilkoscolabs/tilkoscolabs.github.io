@@ -106,10 +106,47 @@
             transform: scale(1.04);
             filter: contrast(1.22) brightness(1.15);
         }
+        .terminal-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         @media (max-width: 820px) {
-            .declassified-hero-inner { grid-template-columns: 1fr; }
-            .declassified-hero-visual { height: 280px; }
-            .declassified-hero-visual img { height: 270px; }
+            .mobile-hide, .terminal-badge { display: none !important; }
+            .declassified-section-top { padding-top: 88px !important; padding-bottom: 16px !important; }
+            .declassified-hero-inner {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .declassified-hero-visual {
+                order: -1;
+                height: 210px;
+                border-bottom: 1px solid #161616;
+            }
+            .declassified-hero-visual img {
+                height: 200px;
+            }
+            .declassified-hero-text {
+                padding: 20px 18px !important;
+            }
+            .declassified-hero-text h1 {
+                font-size: 1.5rem !important;
+                margin: 0 0 10px !important;
+            }
+            .declassified-hero-text .hero-desc {
+                font-size: 0.82rem !important;
+                line-height: 1.55 !important;
+                margin-bottom: 14px !important;
+            }
+            .declassified-hero-text .tag-sm {
+                font-size: 0.68rem !important;
+                padding: 4px 8px !important;
+            }
+            .dossier-thumb { height: 185px; }
+            .dossier-body { padding: 18px; }
+        }
+        @media (hover: none) {
+            .dossier-thumb img { filter: grayscale(20%) contrast(1.05); }
         }
     </style>
 </head>
@@ -127,7 +164,7 @@
             <li><a href="index.html#about" class="nav-link">~/about</a></li>
             <li><a href="index.html#skills" class="nav-link">~/skills</a></li>
             <li><a href="index.html#projects" class="nav-link">~/projects</a></li>
-            <li><a href="declassified.html?v=23" class="nav-link active">~/intel</a></li>
+            <li><a href="declassified.html?v=24" class="nav-link active">~/intel</a></li>
             <li><a href="index.html#contact" class="nav-link">~/contact</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
@@ -135,28 +172,28 @@
         </button>
     </nav>
 
-    <section class="section" style="padding-top: 115px; padding-bottom: 24px;">
+    <section class="section declassified-section-top" style="padding-top: 115px; padding-bottom: 24px;">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <a href="index.html" class="btn btn-outline" style="padding: 7px 14px; font-size: 0.76rem;">← Back to Main Portfolio</a>
-                    <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-dim);">
+                    <a href="index.html" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.74rem;">← Back to Main Portfolio</a>
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim);">
                         <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">~/home</a> /
                         <span style="color: #fff;">~/intel</span>
                     </span>
                 </div>
-                <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);">[ TLP:AMBER // DECLASSIFIED DOSSIERS ]</span>
+                <span class="mobile-hide" style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);">[ TLP:AMBER // DECLASSIFIED DOSSIERS ]</span>
             </div>
 
             <div class="declassified-hero-banner">
                 <div class="terminal-header" style="justify-content: space-between; background: #0a0a0a;">
-                    <div style="display: flex; align-items: center; gap: 6px;">
-                        <div class="terminal-dot red"></div>
-                        <div class="terminal-dot yellow"></div>
-                        <div class="terminal-dot green"></div>
+                    <div style="display: flex; align-items: center; gap: 6px; min-width: 0; overflow: hidden;">
+                        <div class="terminal-dot red" style="flex-shrink: 0;"></div>
+                        <div class="terminal-dot yellow" style="flex-shrink: 0;"></div>
+                        <div class="terminal-dot green" style="flex-shrink: 0;"></div>
                         <span class="terminal-title">tilkoscolabs@kali:~/intel/declassified</span>
                     </div>
-                    <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim);">[ 02 VERIFIED DOSSIERS // 137+ GRAPH NODES ]</span>
+                    <span class="terminal-badge" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); flex-shrink: 0;">[ 02 VERIFIED DOSSIERS // 137+ GRAPH NODES ]</span>
                 </div>
                 <div class="declassified-hero-inner">
                     <div class="declassified-hero-text">
@@ -171,7 +208,7 @@
                         </div>
                     </div>
                     <div class="declassified-hero-visual">
-                        <img src="assets/images/declassified_banner.jpg?v=23" alt="Declassified Intelligence Banner">
+                        <img src="assets/images/declassified_banner.jpg?v=24" alt="Declassified Intelligence Banner">
                     </div>
                 </div>
             </div>
@@ -183,7 +220,7 @@
             <div class="dossier-grid">
 
                 <!-- Card 01 -> Opens case-0x-whitfield.html -->
-                <a href="case-0x-whitfield.html?v=23" class="dossier-card">
+                <a href="case-0x-whitfield.html?v=24" class="dossier-card">
                     <div class="dossier-thumb">
                         <img src="assets/images/coinshaper_safe.jpg" alt="Case 01: Operation 0x [ Whitfield ] 50-Node OSINT Tree">
                     </div>
@@ -208,7 +245,7 @@
                 </a>
 
                 <!-- Card 02 -> Opens case-bashe-apt73.html -->
-                <a href="case-bashe-apt73.html?v=23" class="dossier-card">
+                <a href="case-bashe-apt73.html?v=24" class="dossier-card">
                     <div class="dossier-thumb">
                         <img src="assets/images/apt73_safe_1.jpg" alt="Case 02: Bashe (APT73 / Eraleig) Infrastructure Attribution">
                     </div>
