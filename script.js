@@ -5,11 +5,11 @@
 
 // ── Typing Effect ──
 const roles = [
-    'Intelligence Analyst',
-    'OSINT Specialist',
-    'Digital Investigator',
-    'SOCMINT Researcher',
-    'Threat Hunter',
+    'OSINT & CTI Researcher',
+    'Threat Infrastructure Analyst',
+    'On-Chain Fraud Investigator',
+    'SOCMINT & Graph Analyst',
+    'Open-Source Tool Developer',
 ];
 
 let roleIndex = 0;
