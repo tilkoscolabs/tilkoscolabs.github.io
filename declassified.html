@@ -13,9 +13,12 @@
         .fade-in { opacity: 1 !important; transform: none !important; }
         .dossier-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 28px;
-            margin-top: 20px;
+            margin-top: 10px;
+        }
+        @media (max-width: 820px) {
+            .dossier-grid { grid-template-columns: 1fr; }
         }
         .dossier-card {
             background: var(--bg-card);
@@ -24,10 +27,10 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             transition: all 0.25s ease;
             text-decoration: none;
             color: inherit;
+            height: 100%;
         }
         .dossier-card:hover {
             border-color: var(--text-secondary);
@@ -36,10 +39,11 @@
         }
         .dossier-thumb {
             width: 100%;
-            height: 220px;
+            height: 230px;
             background: #000;
             border-bottom: 1px solid var(--border);
             overflow: hidden;
+            flex-shrink: 0;
         }
         .dossier-thumb img {
             width: 100%;
@@ -81,107 +85,77 @@
         </button>
     </nav>
 
-    <section class="hero" style="min-height: auto; padding-top: 130px; padding-bottom: 40px;">
-        <div class="hero-content" style="max-width: 820px;">
-            <div class="terminal-window" style="margin-bottom: 32px;">
-                <div class="terminal-header">
-                    <div class="terminal-dot red"></div>
-                    <div class="terminal-dot yellow"></div>
-                    <div class="terminal-dot green"></div>
-                    <span class="terminal-title">tilkoscolabs@kali:~/intel/declassified</span>
+    <section class="section" style="padding-top: 120px; padding-bottom: 30px;">
+        <div class="container">
+            <div class="terminal-window" style="max-width: 100%; margin-bottom: 24px;">
+                <div class="terminal-header" style="justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                        <span class="terminal-title">tilkoscolabs@kali:~/intel/declassified</span>
+                    </div>
+                    <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim);">[ 2 DECLASSIFIED DOSSIERS // 137+ GRAPH NODES ]</span>
                 </div>
-                <div class="terminal-body">
+                <div class="terminal-body" style="padding: 20px 24px;">
                     <p class="terminal-line"><span class="prompt">$</span> <span class="command">ls -la /intel/declassified/cases/</span></p>
-                    <h1 class="glitch-text" style="font-size: 2.3rem; margin: 10px 0 14px;">Declassified Briefs</h1>
-                    <p class="terminal-line"><span class="prompt">$</span> <span class="command">cat index.txt</span></p>
-                    <p class="hero-desc" style="color: var(--text-secondary); line-height: 1.65;">Select a declassified dossier below to open its dedicated forensic investigation page. All operations are conducted using strictly non-intrusive, verifiable open-source intelligence methodologies.</p>
-                    <p class="terminal-line">
-                        <span class="prompt">$</span> <span class="cursor-blink">_</span>
-                    </p>
-                </div>
-            </div>
-            <div class="hero-cta" style="margin-bottom: 32px;">
-                <a href="case-0x-whitfield.html" class="btn btn-primary">
-                    <span class="btn-icon">◈</span> Open Case 01: 0x [ Whitfield ] ↗
-                </a>
-                <a href="case-bashe-apt73.html" class="btn btn-outline">
-                    <span class="btn-icon">◈</span> Open Case 02: Bashe (APT73) ↗
-                </a>
-                <a href="index.html" class="btn btn-outline">
-                    ← Return to Portfolio
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="2">2</span>
-                    <span class="stat-label">Declassified Cases</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="137">137+</span>
-                    <span class="stat-label">Graph Nodes Mapped</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="19">19+</span>
-                    <span class="stat-label">Infra &amp; PGP Pivots</span>
+                    <h1 class="glitch-text" style="font-size: 2rem; margin: 6px 0 8px;">Declassified Briefs</h1>
+                    <p class="hero-desc" style="color: var(--text-secondary); margin-bottom: 0; font-size: 0.88rem;">Select a case study below to inspect its dedicated forensic investigation and graph topology.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-dark" style="padding-top: 50px; padding-bottom: 90px;">
+    <section class="section section-dark" style="padding-top: 40px; padding-bottom: 90px;">
         <div class="container">
             <div class="dossier-grid">
 
                 <!-- Card 01 -> Opens case-0x-whitfield.html -->
                 <a href="case-0x-whitfield.html" class="dossier-card">
-                    <div>
-                        <div class="dossier-thumb">
-                            <img src="assets/images/coinshaper_tree.jpg" alt="Case 01: Operation 0x [ Whitfield ] 50-Node OSINT Tree">
+                    <div class="dossier-thumb">
+                        <img src="assets/images/coinshaper_tree.jpg" alt="Case 01: Operation 0x [ Whitfield ] 50-Node OSINT Tree">
+                    </div>
+                    <div class="dossier-body">
+                        <div>
+                            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.2px;">[ CASE // 01 — TLP:CLEAR // 50-NODE OSINT TREE ]</div>
+                            <h3 class="project-title" style="font-size: 1.28rem; margin-bottom: 10px;">Operation: 0x [ Whitfield ] (@coinshaper)</h3>
+                            <p class="project-desc" style="color: var(--text-secondary); font-size: 0.84rem; line-height: 1.6; margin-bottom: 18px;">50-node forensic investigation exposing a USDT fraud syndicate via 43-char EVM corruption recovery (EIP-55), 9 ProtonMail OpenPGP timestamps, and Mod97 banking validation.</p>
                         </div>
-                        <div class="dossier-body">
-                            <div>
-                                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.5px;">[ CASE // 01 — TLP:CLEAR // 50-NODE OSINT TREE ]</div>
-                                <h3 class="project-title" style="font-size: 1.3rem; margin-bottom: 10px;">Operation: 0x [ Whitfield ] (@coinshaper)</h3>
-                                <p class="project-desc" style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 18px;">50-node interactive forensic investigation exposing an advance-fee USDT fraud syndicate on Telegram. Features 43-char EVM corruption recovery into valid EIP-55 wallets, 9 ProtonMail OpenPGP key timestamps, and Mod97 = 0 banking rail verification.</p>
+                        <div>
+                            <div class="project-tags" style="margin-bottom: 20px;">
+                                <span class="tag-sm">50-Node Graph</span>
+                                <span class="tag-sm">EVM / EIP-55</span>
+                                <span class="tag-sm">OpenPGP WKD</span>
+                                <span class="tag-sm">Mod97 Audit</span>
                             </div>
-                            <div>
-                                <div class="project-tags" style="margin-bottom: 20px;">
-                                    <span class="tag-sm">50-Node Graph</span>
-                                    <span class="tag-sm">EVM / EIP-55</span>
-                                    <span class="tag-sm">OpenPGP WKD</span>
-                                    <span class="tag-sm">Mod97 Audit</span>
-                                </div>
-                                <span class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 10px 16px;">
-                                    ◈ Open Full Case 01 Dossier ↗
-                                </span>
-                            </div>
+                            <span class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 11px 16px;">
+                                ◈ Open Case 01 Dossier ↗
+                            </span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 02 -> Opens case-bashe-apt73.html -->
                 <a href="case-bashe-apt73.html" class="dossier-card">
-                    <div>
-                        <div class="dossier-thumb">
-                            <img src="assets/images/apt73_neo4j_1.jpg" alt="Case 02: Bashe (APT73 / Eraleig) Infrastructure Attribution">
+                    <div class="dossier-thumb">
+                        <img src="assets/images/apt73_neo4j_1.jpg" alt="Case 02: Bashe (APT73 / Eraleig) Infrastructure Attribution">
+                    </div>
+                    <div class="dossier-body">
+                        <div>
+                            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.2px;">[ CASE // 02 — TLP:AMBER // maCERT / DGSSI ]</div>
+                            <h3 class="project-title" style="font-size: 1.28rem; margin-bottom: 10px;">Bashe Group (APT73 / Eraleig) Attribution</h3>
+                            <p class="project-desc" style="color: var(--text-secondary); font-size: 0.84rem; line-height: 1.6; margin-bottom: 18px;">CTI infrastructure dossier mapping 5 backend servers (AS9009 / IROKO Networks), 9 Tor (.onion) mirrors, and corporate filings (INN 434575515998) inside an 87-node Neo4j graph.</p>
                         </div>
-                        <div class="dossier-body">
-                            <div>
-                                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.5px;">[ CASE // 02 — TLP:AMBER // SUBMITTED TO maCERT / DGSSI ]</div>
-                                <h3 class="project-title" style="font-size: 1.3rem; margin-bottom: 10px;">Bashe Group (APT73 / Eraleig) Attribution</h3>
-                                <p class="project-desc" style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 18px;">Multi-part Cyber Threat Intelligence dossier mapping 5 backend servers (AS9009 / IROKO Networks, Matrix/XMPP, private Gitea, C2) and 9 Tor (.onion) mirrors, linking the actor to Russian corporate filings (INN 434575515998) in an 87-node Neo4j graph.</p>
+                        <div>
+                            <div class="project-tags" style="margin-bottom: 20px;">
+                                <span class="tag-sm">APT73 / Eraleig</span>
+                                <span class="tag-sm">Neo4j (87 Nodes)</span>
+                                <span class="tag-sm">ASN &amp; C2 Recon</span>
+                                <span class="tag-sm">maCERT / DGSSI</span>
                             </div>
-                            <div>
-                                <div class="project-tags" style="margin-bottom: 20px;">
-                                    <span class="tag-sm">APT73 / Eraleig</span>
-                                    <span class="tag-sm">Neo4j (87 Nodes)</span>
-                                    <span class="tag-sm">ASN &amp; C2 Recon</span>
-                                    <span class="tag-sm">maCERT / DGSSI</span>
-                                </div>
-                                <span class="btn btn-outline" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 10px 16px;">
-                                    ◈ Open Full Case 02 Dossier ↗
-                                </span>
-                            </div>
+                            <span class="btn btn-outline" style="width: 100%; justify-content: center; font-size: 0.8rem; padding: 11px 16px;">
+                                ◈ Open Case 02 Dossier ↗
+                            </span>
                         </div>
                     </div>
                 </a>
