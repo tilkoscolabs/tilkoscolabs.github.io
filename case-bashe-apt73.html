@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="yandex" content="none">
     <meta name="description" content="Case 02: Bashe Group (APT73 / Eraleig) — Infrastructure Mapping, Registry Attribution & Neo4j Knowledge Graph Dossier by TilkoscoLabs.">
     <title>Case 02: Bashe (APT73 / Eraleig) | TilkoscoLabs Declassified</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,9 +57,9 @@
             <span class="cursor-blink">_</span>
         </a>
         <ul class="nav-links">
-            <li><a href="declassified.html?v=14" class="nav-link">← ~/declassified</a></li>
-            <li><a href="case-0x-whitfield.html?v=14" class="nav-link">~/case_01_0x</a></li>
-            <li><a href="case-bashe-apt73.html?v=14" class="nav-link active">~/case_02_apt73</a></li>
+            <li><a href="declassified.html?v=15" class="nav-link">← ~/declassified</a></li>
+            <li><a href="case-0x-whitfield.html?v=15" class="nav-link">~/case_01_0x</a></li>
+            <li><a href="case-bashe-apt73.html?v=15" class="nav-link active">~/case_02_apt73</a></li>
             <li><a href="index.html" class="nav-link">~/home</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
@@ -67,7 +70,7 @@
     <section class="section section-dark" style="padding-top: 120px; padding-bottom: 90px;">
         <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
-                <a href="declassified.html?v=14" class="btn btn-outline" style="padding: 7px 14px; font-size: 0.76rem;">← Back to Declassified Hub</a>
+                <a href="declassified.html?v=15" class="btn btn-outline" style="padding: 7px 14px; font-size: 0.76rem;">← Back to Declassified Hub</a>
                 <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);">[ CASE 02 // TLP:AMBER // SUBMITTED TO maCERT / DGSSI ]</span>
             </div>
 
@@ -110,13 +113,13 @@
                 <div class="info-card" style="background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 6px; padding: 22px;">
                     <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.5px;">[ 01 // NETINT RECON ]</div>
                     <h3 style="font-family: var(--font-mono); font-size: 1rem; margin-bottom: 10px; color: #fff;">5 Servers &amp; 9 Tor Nodes</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Mapped 5 backend servers across Russian &amp; Czech ASNs (<code style="color:#fff;">AS9009 / IROKO Networks</code>), including a Matrix/XMPP server (<code style="color:#fff;">macloud.host</code>), private Gitea, and 9 <code style="color:#fff;">.onion</code> mirrors.</p>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Mapped 5 backend servers across Eastern European &amp; EU ASNs (<code style="color:#fff;">AS9009 / IROKO Networks</code>), including a Matrix/XMPP server (<code style="color:#fff;">matrix.[redacted].host</code>), private Gitea, and 9 <code style="color:#fff;">.onion</code> mirrors.</p>
                 </div>
 
                 <div class="info-card" style="background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 6px; padding: 22px;">
                     <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.5px;">[ 02 // REGINT ATTRIBUTION ]</div>
                     <h3 style="font-family: var(--font-mono); font-size: 1rem; margin-bottom: 10px; color: #fff;">Corporate &amp; Registry Links</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Pivoted from SSH/JARM fingerprints and an admin OPSEC leak (<code style="color:#fff;">@bashe_***</code>) to Russian tax filings (<code style="color:#fff;">INN 4345******98</code>), Estonia, and Panama Papers entities.</p>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Pivoted from SSH/JARM fingerprints and an admin OPSEC leak (<code style="color:#fff;">@bashe_***</code>) to cross-border corporate filings (<code style="color:#fff;">INN 4345******98</code>), Estonia, and Panama Papers entities.</p>
                 </div>
 
                 <div class="info-card" style="background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 6px; padding: 22px;">
@@ -128,8 +131,8 @@
 
             <!-- Bottom Navigation Bar -->
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 50px; padding-top: 28px; border-top: 1px solid var(--border);">
-                <a href="case-0x-whitfield.html?v=14" class="btn btn-outline">← Previous Dossier: Case 01 (0x [ Whitfield ])</a>
-                <a href="declassified.html?v=14" class="btn btn-primary">Back to Declassified Hub →</a>
+                <a href="case-0x-whitfield.html?v=15" class="btn btn-outline">← Previous Dossier: Case 01 (0x [ Whitfield ])</a>
+                <a href="declassified.html?v=15" class="btn btn-primary">Back to Declassified Hub →</a>
             </div>
         </div>
     </section>

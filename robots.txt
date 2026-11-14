@@ -1,0 +1,11 @@
+User-agent: Yandex
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: *
+Disallow: /declassified.html
+Disallow: /case-0x-whitfield.html
+Disallow: /case-bashe-apt73.html
+Disallow: /assets/images/
