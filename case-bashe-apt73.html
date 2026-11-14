@@ -11,6 +11,29 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .fade-in { opacity: 1 !important; transform: none !important; }
+        .case-summary {
+            max-width: 780px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .neo4j-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr;
+            gap: 14px;
+            background: #000;
+            padding: 14px;
+        }
+        @media (max-width: 860px) {
+            .pillars-grid, .neo4j-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -35,120 +58,68 @@
 
     <section class="section section-dark" style="padding-top: 120px; padding-bottom: 90px;">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
-                <a href="declassified.html" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.78rem;">← Back to Declassified Hub</a>
-                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim);">[ DOSSIER // 02 OF 02 — SUBMITTED TO maCERT / DGSSI ]</span>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+                <a href="declassified.html" class="btn btn-outline" style="padding: 7px 14px; font-size: 0.76rem;">← Back to Declassified Hub</a>
+                <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);">[ CASE 02 // TLP:AMBER // SUBMITTED TO maCERT / DGSSI ]</span>
             </div>
 
-            <h1 class="section-title" style="font-size: 1.85rem; margin-bottom: 32px;">
-                <span class="section-number">CASE 02 //</span> Bashe Group (APT73 / Eraleig) Infrastructure Attribution
+            <h1 class="section-title" style="font-size: 1.8rem; margin-bottom: 14px;">
+                <span class="section-number">02.</span> Bashe Group (APT73 / Eraleig) Attribution
             </h1>
+            <p class="case-summary">
+                Cyber Threat Intelligence dossier mapping 5 clearnet backend servers, 9 Tor (<code style="color:#fff;">.onion</code>) hidden services, and international corporate registries inside an 87-node, 111-relationship Neo4j Knowledge Graph.
+            </p>
 
             <!-- Dual Monochrome Neo4j Knowledge Graph Showcase -->
-            <div class="terminal-window" style="margin-bottom: 48px; border: 1px solid var(--border);">
+            <div class="terminal-window" style="margin-bottom: 36px; border: 1px solid var(--border);">
                 <div class="terminal-header" style="justify-content: space-between;">
                     <div style="display: flex; align-items: center; gap: 6px;">
                         <div class="terminal-dot red"></div>
                         <div class="terminal-dot yellow"></div>
                         <div class="terminal-dot green"></div>
-                        <span class="terminal-title">neo4j_browser // localhost:7474 — MATCH (n)-[r]-&gt;(m) RETURN n, r, m (87 NODES // 111 RELATIONSHIPS)</span>
+                        <span class="terminal-title">neo4j_browser // localhost:7474 — 87 NODES &amp; 111 RELATIONSHIPS</span>
                     </div>
-                    <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);">[ NEO4J CYPHER GRAPH ]</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim);">[ CLICK IMAGES TO ENLARGE ]</span>
                 </div>
-                <div style="background: #000; padding: 14px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1.35fr 1fr; gap: 14px; align-items: stretch;">
-                    <a href="assets/images/apt73_neo4j_1.jpg" target="_blank" title="Open Neo4j Infrastructure & ASN Attribution View" style="display: flex; flex-direction: column; justify-content: space-between; background: #080808; border: 1px solid #1c1c1c; border-radius: 6px; overflow: hidden; text-decoration: none;">
-                        <img src="assets/images/apt73_neo4j_1.jpg" alt="Neo4j Graph View 1 — AS9009 / IROKO Networks & Entity Attribution" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                <div class="neo4j-grid">
+                    <a href="assets/images/apt73_neo4j_1.jpg" target="_blank" style="display: flex; flex-direction: column; justify-content: space-between; background: #080808; border: 1px solid #1c1c1c; border-radius: 6px; overflow: hidden; text-decoration: none;">
+                        <img src="assets/images/apt73_neo4j_1.jpg" alt="Neo4j View 1 — AS9009 / IROKO Networks" style="width: 100%; height: 390px; object-fit: cover; display: block;">
                         <div style="padding: 10px 14px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary); border-top: 1px solid #1a1a1a; background: #0d0d0d;">
-                            [ FIG 2.1 ] Core Infrastructure Cluster — AS9009 / IROKO Networks, C2 IPs &amp; Estonian/Russian Entity Links ↗
+                            [ FIG 2.1 ] AS9009 / IROKO Networks &amp; Entity Links ↗
                         </div>
                     </a>
-                    <a href="assets/images/apt73_neo4j_2.jpg" target="_blank" title="Open Neo4j Full 87-Node / 111-Relationship Topology View" style="display: flex; flex-direction: column; justify-content: space-between; background: #080808; border: 1px solid #1c1c1c; border-radius: 6px; overflow: hidden; text-decoration: none;">
-                        <img src="assets/images/apt73_neo4j_2.jpg" alt="Neo4j Graph View 2 — Full 87-Node / 111-Relationship Topology" style="width: 100%; height: 420px; object-fit: cover; display: block;">
+                    <a href="assets/images/apt73_neo4j_2.jpg" target="_blank" style="display: flex; flex-direction: column; justify-content: space-between; background: #080808; border: 1px solid #1c1c1c; border-radius: 6px; overflow: hidden; text-decoration: none;">
+                        <img src="assets/images/apt73_neo4j_2.jpg" alt="Neo4j View 2 — Full 87-Node / 111-Relationship Topology" style="width: 100%; height: 390px; object-fit: cover; display: block;">
                         <div style="padding: 10px 14px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary); border-top: 1px solid #1a1a1a; background: #0d0d0d;">
-                            [ FIG 2.2 ] Full 87-Node / 111-Relationship Neo4j Topology (Workstation Capture) ↗
+                            [ FIG 2.2 ] Full 87-Node / 111-Relationship Topology ↗
                         </div>
                     </a>
-                </div>
-                <div style="padding: 14px 20px; background: var(--bg-card); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-                    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary);">[+] Live Neo4j Knowledge Graph mapping Domains, IPAddresses, Organizations, ThreatActors, and Corporate Registries.</span>
-                    <div style="display: flex; gap: 10px;">
-                        <a href="assets/images/apt73_neo4j_1.jpg" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.73rem;">◈ View Fig 2.1 ↗</a>
-                        <a href="assets/images/apt73_neo4j_2.jpg" target="_blank" class="btn btn-outline" style="padding: 6px 12px; font-size: 0.73rem;">◈ View Fig 2.2 ↗</a>
-                    </div>
                 </div>
             </div>
 
-            <div class="split-layout">
-                <div class="split-text">
-                    <h3 class="project-title" style="font-size: 1.4rem; margin-bottom: 8px;">Adversarial Infrastructure Mapping &amp; Threat Attribution</h3>
-                    <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 16px;">[ CLASSIFICATION: TLP:AMBER // NATIONAL CYBER DEFENSE DOSSIER ]</div>
-                    <p class="project-desc" style="font-size: 0.9rem; color: var(--text-secondary);">Authored a multi-part Cyber Threat Intelligence dossier investigating claimed disclosures targeting Moroccan critical infrastructure and public institutions (Maroc Telecom / IAM, HACA, 2M Television, and IRES). Through deep network reconnaissance (NETINT), corporate registry correlation (REGINT), and darknet leak triage, the investigation mapped the group's backend server cluster and proved the claimed 30GB disclosures were recycled historical datasets rather than active intrusions.</p>
-                    <div class="project-features" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; margin: 20px 0; font-family: var(--font-mono); color: var(--text-secondary);">
-                        <span>[+] Mapped 5 backend servers across Russian &amp; Czech ASNs (AS9009 / IROKO Networks)</span>
-                        <span>[+] Identified Matrix/XMPP server (macloud.host), private Gitea, C2 nodes &amp; 9 Tor (.onion) mirrors</span>
-                        <span>[+] Linked Bashe to APT73 via corporate filings in Russia (INN 434575515998), Estonia &amp; Panama Papers</span>
-                        <span>[+] Proved 30GB leaks were recycled LockBit post-Cronos datasets (Zero active breach)</span>
-                        <span>[+] Delivered an 87-node, 111-relationship Neo4j Knowledge Graph &amp; 10 C2 IP block rules</span>
-                    </div>
-                    <div class="project-tags" style="margin-top: 16px;">
-                        <span class="tag-sm">APT73 / Eraleig</span>
-                        <span class="tag-sm">ASN &amp; C2 Recon</span>
-                        <span class="tag-sm">Neo4j (87 Nodes)</span>
-                        <span class="tag-sm">Tor Hidden Services</span>
-                        <span class="tag-sm">REGINT / Panama Papers</span>
-                        <span class="tag-sm">maCERT / DGSSI</span>
-                    </div>
+            <!-- 3 Clean, Short, Scannable CTI Cards (Zero Clutter) -->
+            <div class="pillars-grid">
+                <div class="info-card" style="background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 6px; padding: 22px;">
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.5px;">[ 01 // NETINT RECON ]</div>
+                    <h3 style="font-family: var(--font-mono); font-size: 1rem; margin-bottom: 10px; color: #fff;">5 Servers &amp; 9 Tor Nodes</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Mapped 5 backend servers across Russian &amp; Czech ASNs (<code style="color:#fff;">AS9009 / IROKO Networks</code>), including a Matrix/XMPP server (<code style="color:#fff;">macloud.host</code>), private Gitea, and 9 <code style="color:#fff;">.onion</code> mirrors.</p>
                 </div>
-                <div class="split-image">
-                    <div class="terminal-window" style="margin-bottom: 0; height: 100%;">
-                        <div class="terminal-header">
-                            <div class="terminal-dot red"></div>
-                            <div class="terminal-dot yellow"></div>
-                            <div class="terminal-dot green"></div>
-                            <span class="terminal-title">apt73_infrastructure_map.log</span>
-                        </div>
-                        <div class="terminal-body" style="font-size: 0.76rem; line-height: 1.75; color: var(--text-secondary);">
-                            <p class="terminal-line"><span class="prompt">$</span> <span class="command">./cti_mapper.py --actor "Bashe / APT73" --export neo4j</span></p>
-                            <p>[+] Threat Actor    : Bashe Group (APT73 / Eraleig)</p>
-                            <p>[+] Clearnet Surface: 5 Backend Servers (AS9009 / IROKO / Czechia)</p>
-                            <p>[+] Encrypted Comms : macloud.host (Matrix / XMPP homeserver)</p>
-                            <p>[+] Dev &amp; Tooling   : Self-hosted private Gitea repository node</p>
-                            <p>[+] Darknet Surface : 9 Active Tor (.onion) DLS &amp; negotiation portals</p>
-                            <p>[+] OPSEC Pivot     : @bashe_administration avatar &amp; SSH/JARM hashes</p>
-                            <p>[+] Registry Link   : Russian INN 434575515998 + Estonia + Offshore</p>
-                            <p>[+] Triage Verdict  : Recycled LockBit post-Cronos archives verified</p>
-                            <p>[+] Graph Delivery  : 87 Nodes // 111 Relationships (Cypher ready)</p>
-                            <p>[+] Defensive Output: 10 Actionable C2 IPv4 Block Rules issued</p>
-                            <p class="terminal-line"><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- 3 Monochrome CTI Pillar Cards -->
-            <div class="about-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px;">
-                <div class="info-card" style="background: rgba(10,10,12,0.8); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 4px; padding: 25px;">
-                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 12px; letter-spacing: 2px;">[ MODULE // 01 ]</div>
-                    <h3 style="font-family: var(--font-mono); font-size: 1.05rem; margin-bottom: 12px; text-transform: uppercase;">Adversarial Network Recon (NETINT)</h3>
-                    <div style="width: 30px; height: 1px; background: var(--border); margin-bottom: 14px;"></div>
-                    <p style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Correlated TLS certificates, SSH host keys, JARM signatures, and ASN routing histories across Shodan, Censys, and Fofa to uncover 5 clearnet backend servers supporting 9 Tor (<code style="color: #ddd;">.onion</code>) hidden services, including the group's private Gitea instance and Matrix/XMPP communications server.</p>
+                <div class="info-card" style="background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 6px; padding: 22px;">
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.5px;">[ 02 // REGINT ATTRIBUTION ]</div>
+                    <h3 style="font-family: var(--font-mono); font-size: 1rem; margin-bottom: 10px; color: #fff;">Corporate &amp; Registry Links</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Pivoted from SSH/JARM fingerprints and an admin OPSEC leak (<code style="color:#fff;">@bashe_administration</code>) to Russian tax filings (<code style="color:#fff;">INN 434575515998</code>), Estonia, and Panama Papers entities.</p>
                 </div>
-                <div class="info-card" style="background: rgba(10,10,12,0.8); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 4px; padding: 25px;">
-                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 12px; letter-spacing: 2px;">[ MODULE // 02 ]</div>
-                    <h3 style="font-family: var(--font-mono); font-size: 1.05rem; margin-bottom: 12px; text-transform: uppercase;">Corporate &amp; Registry Attribution (REGINT)</h3>
-                    <div style="width: 30px; height: 1px; background: var(--border); margin-bottom: 14px;"></div>
-                    <p style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Pivoted from historical domain WHOIS records and a Telegram administrator OPSEC leak (<code style="color: #ddd;">@bashe_administration</code>) into Russian tax filings (<code style="color: #ddd;">INN 434575515998</code>), Estonian commercial registries, and offshore Panama Papers entities to establish continuity between Bashe and APT73 / Eraleig.</p>
-                </div>
-                <div class="info-card" style="background: rgba(10,10,12,0.8); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 4px; padding: 25px;">
-                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 12px; letter-spacing: 2px;">[ MODULE // 03 ]</div>
-                    <h3 style="font-family: var(--font-mono); font-size: 1.05rem; margin-bottom: 12px; text-transform: uppercase;">Neo4j Graph &amp; Defensive Mitigation</h3>
-                    <div style="width: 30px; height: 1px; background: var(--border); margin-bottom: 14px;"></div>
-                    <p style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Structured the entire investigation into an interactive 87-node, 111-relationship Neo4j Knowledge Graph with ready-to-execute Cypher queries and 10 actionable firewall/SOC block rules, providing national incident responders with immediate situational clarity.</p>
+
+                <div class="info-card" style="background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 6px; padding: 22px;">
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.5px;">[ 03 // GRAPH &amp; TRIAGE ]</div>
+                    <h3 style="font-family: var(--font-mono); font-size: 1rem; margin-bottom: 10px; color: #fff;">Neo4j Graph &amp; Leak Triage</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Proved claimed 30GB breaches were recycled post-Cronos datasets and delivered an 87-node Neo4j Cypher graph with 10 actionable C2 IP block rules to national CERT.</p>
                 </div>
             </div>
 
             <!-- Bottom Navigation Bar -->
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 50px; padding-top: 28px; border-top: 1px solid var(--border);">
                 <a href="case-0x-whitfield.html" class="btn btn-outline">← Previous Dossier: Case 01 (0x [ Whitfield ])</a>
                 <a href="declassified.html" class="btn btn-primary">Back to Declassified Hub →</a>
             </div>

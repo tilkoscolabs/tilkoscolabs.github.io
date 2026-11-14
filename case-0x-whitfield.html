@@ -11,6 +11,22 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .fade-in { opacity: 1 !important; transform: none !important; }
+        .case-summary {
+            max-width: 780px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 32px;
+        }
+        @media (max-width: 860px) {
+            .pillars-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -35,111 +51,61 @@
 
     <section class="section section-dark" style="padding-top: 120px; padding-bottom: 90px;">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
-                <a href="declassified.html" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.78rem;">← Back to Declassified Hub</a>
-                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim);">[ DOSSIER // 01 OF 02 — TLP:CLEAR ]</span>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+                <a href="declassified.html" class="btn btn-outline" style="padding: 7px 14px; font-size: 0.76rem;">← Back to Declassified Hub</a>
+                <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-dim);">[ CASE 01 // TLP:CLEAR // 50-NODE OSINT TREE ]</span>
             </div>
 
-            <h1 class="section-title" style="font-size: 1.85rem; margin-bottom: 32px;">
-                <span class="section-number">CASE 01 //</span> Operation: 0x [ Whitfield ] (@coinshaper)
+            <h1 class="section-title" style="font-size: 1.8rem; margin-bottom: 14px;">
+                <span class="section-number">01.</span> Operation: 0x [ Whitfield ] (@coinshaper)
             </h1>
+            <p class="case-summary">
+                50-node forensic investigation exposing an advance-fee USDT fraud syndicate on Telegram (<code style="color:#fff;">t.me/usdt_glitch_ma</code>, 4,486 subscribers) through on-chain EVM address recovery, OpenPGP keyserver timestamps, and banking checksum verification.
+            </p>
 
             <!-- Full-Width Monochrome OSINT Tree Screenshot Showcase -->
-            <div class="terminal-window" style="margin-bottom: 48px; border: 1px solid var(--border);">
+            <div class="terminal-window" style="margin-bottom: 36px; border: 1px solid var(--border);">
                 <div class="terminal-header" style="justify-content: space-between;">
                     <div style="display: flex; align-items: center; gap: 6px;">
                         <div class="terminal-dot red"></div>
                         <div class="terminal-dot yellow"></div>
                         <div class="terminal-dot green"></div>
-                        <span class="terminal-title">osint_tree_visualizer // TARGET: 0x [ Whitfield ] (@coinshaper) — 50 VERIFIED NODES</span>
+                        <span class="terminal-title">osint_tree // TARGET: 0x [ Whitfield ] (@coinshaper) — 50 VERIFIED NODES</span>
                     </div>
-                    <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-dim);">[ 50-NODE GRAPH TOPOLOGY ]</span>
+                    <a href="assets/images/coinshaper_tree.jpg" target="_blank" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary); text-decoration: none;">[ Open Full Image ↗ ]</a>
                 </div>
-                <div style="background: #000; padding: 12px; border-bottom: 1px solid var(--border);">
+                <div style="background: #000; padding: 12px;">
                     <a href="assets/images/coinshaper_tree.jpg" target="_blank" title="Open Full-Resolution 50-Node OSINT Investigation Graph">
-                        <img src="assets/images/coinshaper_tree.jpg" alt="TARGET: 0x [ Whitfield ] (@coinshaper) 50-Node OSINT Tree" style="width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid #1a1a1a;">
+                        <img src="assets/images/coinshaper_tree.jpg" alt="TARGET: 0x [ Whitfield ] (@coinshaper) 50-Node OSINT Tree" style="width: 100%; height: auto; display: block; border-radius: 4px;">
                     </a>
                 </div>
-                <div style="padding: 14px 20px; background: var(--bg-card); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-                    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary);">[+] 50-Node Entity-Link Graph mapping Telegram channels, corrupted EVM/TRON proofs, 9 ProtonMail OpenPGP keys, and banking rails.</span>
-                    <a href="assets/images/coinshaper_tree.jpg" target="_blank" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.75rem;">◈ Open Full-Size Graph Image ↗</a>
-                </div>
             </div>
 
-            <!-- Split Layout Technical Breakdown -->
-            <div class="split-layout">
-                <div class="split-text">
-                    <h3 class="project-title" style="font-size: 1.4rem; margin-bottom: 8px;">On-Chain Crypto Fraud Forensics &amp; Syndicate Attribution</h3>
-                    <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 16px;">[ CASE ID: OSINT-2026-0X // FINANCIAL &amp; BLOCKCHAIN FORENSICS ]</div>
-                    <p class="project-desc" style="font-size: 0.9rem; color: var(--text-secondary);">Engineered a 50-node forensic investigation tree exposing an advance-fee USDT fraud syndicate operating via Telegram (<code style="color: #fff;">t.me/usdt_glitch_ma</code>, UID <code style="color: #fff;">7121379778</code>, 4,486 subscribers) peddling a fabricated exchange rate lure (~2.56 MAD / USDT). By combining on-chain bytecode/transaction verification, OpenPGP keyserver timestamp extraction, and digital image forensics, the investigation proved systematic fabrication of payout receipts and mapped the operator's multi-alias infrastructure.</p>
-                    <div class="project-features" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; margin: 20px 0; font-family: var(--font-mono); color: var(--text-secondary);">
-                        <span>[+] Reconstructed 43-character corrupted EVM strings into valid EIP-55 / EIP-7702 wallets</span>
-                        <span>[+] Verified 0.00 USDT on-chain token delivery across Ethereum, BSC, and TRON</span>
-                        <span>[+] Extracted exact OpenPGP key creation timestamps across 9 ProtonMail accounts</span>
-                        <span>[+] Correlated 3 Gmail accounts, Adobe UUIDs, and prior alias history ("Ayman 44")</span>
-                        <span>[+] Validated 3 regional banking RIBs via Mod97 = 0 checksums &amp; isolated homonyms</span>
-                    </div>
-                    <div class="project-tags" style="margin-top: 16px;">
-                        <span class="tag-sm">EVM / BSC Forensics</span>
-                        <span class="tag-sm">EIP-55 / EIP-7702</span>
-                        <span class="tag-sm">OpenPGP WKD</span>
-                        <span class="tag-sm">Mod97 Checksum</span>
-                        <span class="tag-sm">Image Forensics</span>
-                        <span class="tag-sm">50-Node Graph</span>
-                    </div>
+            <!-- 3 Clean, Short, Scannable Forensic Cards (Zero Clutter) -->
+            <div class="pillars-grid">
+                <div class="info-card" style="background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 6px; padding: 22px;">
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.5px;">[ 01 // ON-CHAIN AUDIT ]</div>
+                    <h3 style="font-family: var(--font-mono); font-size: 1rem; margin-bottom: 10px; color: #fff;">EVM &amp; EIP-55 Recovery</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Reversed 43-character corrupted EVM strings and illegal non-hex characters in fake payout proofs to recover the real EIP-55 / EIP-7702 wallets, proving <code style="color:#fff;">0.00 USDT</code> on-chain delivery.</p>
                 </div>
-                <div class="split-image">
-                    <div class="terminal-window" style="margin-bottom: 0; height: 100%;">
-                        <div class="terminal-header">
-                            <div class="terminal-dot red"></div>
-                            <div class="terminal-dot yellow"></div>
-                            <div class="terminal-dot green"></div>
-                            <span class="terminal-title">0x_whitfield_forensics.log</span>
-                        </div>
-                        <div class="terminal-body" style="font-size: 0.76rem; line-height: 1.75; color: var(--text-secondary);">
-                            <p class="terminal-line"><span class="prompt">$</span> <span class="command">./verify_syndicate.py --target 0x_whitfield</span></p>
-                            <p>[+] Primary Channel : t.me/usdt_glitch_ma (ID: 7121379778)</p>
-                            <p>[+] Bot &amp; Admin     : @coinshaperbot // @coinshaper (ID: 7638129530)</p>
-                            <p>[+] Proof Anomaly 1 : 43-char EVM string (0x04a8...bab430d38c)</p>
-                            <p>[+] Proof Anomaly 2 : Illegal non-hex chars ('l','i','s') in 0x3d3a...</p>
-                            <p>[+] Proof Anomaly 3 : Truncated 35-char TRON string (TiaZjH...Zy5i)</p>
-                            <p>[+] On-Chain Recovery: Valid EIP-55 victim wallets reconstructed</p>
-                            <p>[+] Ledger Audit    : Zero matching USDT transfers on ETH / BSC</p>
-                            <p>[+] Image Forensics : Status bar 11:13 vs receipt 12:20 (Composited)</p>
-                            <p>[+] PGP Keyserver   : 9 ProtonMail keys timestamped (2024 - 2026 UTC)</p>
-                            <p>[+] Banking Audit   : 3 Regional RIBs verified (ISO 7064 Mod97 == 0)</p>
-                            <p class="terminal-line"><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- 3 Monochrome Forensic Pillar Cards -->
-            <div class="about-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px;">
-                <div class="info-card" style="background: rgba(10,10,12,0.8); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 4px; padding: 25px;">
-                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 12px; letter-spacing: 2px;">[ PHASE // 01 ]</div>
-                    <h3 style="font-family: var(--font-mono); font-size: 1.05rem; margin-bottom: 12px; text-transform: uppercase;">Cryptographic &amp; On-Chain Audit</h3>
-                    <div style="width: 30px; height: 1px; background: var(--border); margin-bottom: 14px;"></div>
-                    <p style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Identified deliberate character injection and truncation in advertised payout screenshots (43-char EVM hashes and non-hexadecimal characters). Reversed the single-character corruptions to recover the underlying EIP-55 / EIP-7702 wallets (SafePal, Trust Wallet), proving that none of the advertised 2,600–5,000 USDT payouts ever occurred on-chain.</p>
+                <div class="info-card" style="background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 6px; padding: 22px;">
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.5px;">[ 02 // KEYSERVER PIVOT ]</div>
+                    <h3 style="font-family: var(--font-mono); font-size: 1rem; margin-bottom: 10px; color: #fff;">9 ProtonMail OpenPGP Keys</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Extracted exact OpenPGP key creation timestamps down to the second across 9 ProtonMail accounts via WKD endpoints, linking 3 Gmail addresses and an active Adobe UUID.</p>
                 </div>
-                <div class="info-card" style="background: rgba(10,10,12,0.8); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 4px; padding: 25px;">
-                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 12px; letter-spacing: 2px;">[ PHASE // 02 ]</div>
-                    <h3 style="font-family: var(--font-mono); font-size: 1.05rem; margin-bottom: 12px; text-transform: uppercase;">OpenPGP &amp; Multi-Platform Pivoting</h3>
-                    <div style="width: 30px; height: 1px; background: var(--border); margin-bottom: 14px;"></div>
-                    <p style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Queried ProtonMail Web Key Directory (WKD) endpoints to extract exact OpenPGP key creation timestamps down to the second across 9 linked ProtonMail accounts (<code style="color: #ddd;">coinshaper@</code>, <code style="color: #ddd;">usdtglitch@</code>, <code style="color: #ddd;">whitfield.ma@</code>), bridging the persona cluster to 3 Gmail addresses and an active Adobe account UUID.</p>
-                </div>
-                <div class="info-card" style="background: rgba(10,10,12,0.8); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 4px; padding: 25px;">
-                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 12px; letter-spacing: 2px;">[ PHASE // 03 ]</div>
-                    <h3 style="font-family: var(--font-mono); font-size: 1.05rem; margin-bottom: 12px; text-transform: uppercase;">Media Forensics &amp; Ethics Gate</h3>
-                    <div style="width: 30px; height: 1px; background: var(--border); margin-bottom: 14px;"></div>
-                    <p style="font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6;">Detected UI compositing flaws in video/photo proofs (system clock desynchronization and synthetic dust overlays), mathematically validated 3 regional 24-digit banking RIBs (<code style="color: #ddd;">Mod97 = 0</code>), and enforced strict evidentiary disambiguation to isolate unverified name homonyms from confirmed syndicate infrastructure.</p>
+
+                <div class="info-card" style="background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--text-secondary); border-radius: 6px; padding: 22px;">
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); margin-bottom: 8px; letter-spacing: 1.5px;">[ 03 // FINANCIAL &amp; MEDIA ]</div>
+                    <h3 style="font-family: var(--font-mono); font-size: 1rem; margin-bottom: 10px; color: #fff;">Mod97 = 0 &amp; Image Forensics</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Detected UI clock compositing flaws (<code style="color:#fff;">11:13 vs 12:20</code>), validated 3 regional banking RIBs via <code style="color:#fff;">Mod97 = 0</code> checksums, and isolated unverified name homonyms.</p>
                 </div>
             </div>
 
             <!-- Bottom Navigation Bar -->
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 50px; padding-top: 28px; border-top: 1px solid var(--border);">
                 <a href="declassified.html" class="btn btn-outline">← Back to Declassified Hub</a>
-                <a href="case-bashe-apt73.html" class="btn btn-primary">Next Dossier: Case 02 (Bashe / APT73) →</a>
+                <a href="case-bashe-apt73.html" class="btn btn-primary">Next Dossier: Case 02 (APT73) →</a>
             </div>
         </div>
     </section>
