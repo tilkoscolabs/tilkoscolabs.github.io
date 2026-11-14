@@ -374,65 +374,23 @@
             </h2>
             <div class="split-layout fade-in">
                 <div class="split-text">
-                    <h3 class="project-title" style="font-size: 1.5rem; margin-bottom: 8px;">Bashe Ransomware Group (APT73 / Eraleig)</h3>
-                    <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #ffa502; margin-bottom: 16px;">[ CLASSIFICATION: TLP:AMBER // SUBMITTED TO maCERT / DGSSI ]</div>
-                    <p class="project-desc" style="font-size: 0.9rem;">Multi-part Cyber Threat Intelligence dossier analyzing claimed ransomware disclosures against Moroccan critical infrastructure (Maroc Telecom / IAM, HACA, 2M, IRES). Mapped 5 backend servers across Russian &amp; Czech ASNs (AS9009 / IROKO Networks, Matrix/XMPP, private Gitea, C2 nodes) and 9 Tor (.onion) hidden services, linking Bashe to APT73 via corporate registries (INN 434575515998) and Panama Papers filings while forensically proving claimed 30GB leaks were recycled post-Cronos datasets.</p>
-                    <div class="project-features" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; margin: 16px 0; font-family: var(--font-mono); color: var(--text-secondary);">
-                        <span>[+] 5 Backend Servers &amp; 9 Tor (.onion) Hidden Services Mapped</span>
-                        <span>[+] 87-Node, 111-Relationship Neo4j Knowledge Graph (Cypher)</span>
-                        <span>[+] 10 Actionable C2 IP Block Rules Delivered to National CERT</span>
-                    </div>
+                    <h3 class="project-title" style="font-size: 1.5rem; margin-bottom: 8px;">Declassified Intelligence Dossiers</h3>
+                    <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 16px;">[ CLASSIFICATION: TLP:CLEAR // VERIFIED CASE STUDIES ]</div>
+                    <p class="project-desc" style="font-size: 0.9rem;">Structured OSINT and Cyber Threat Intelligence dossiers detailing on-chain cryptocurrency fraud forensics (Operation: 0x [ Whitfield ] / @coinshaper — 50-Node Investigation Tree), adversarial infrastructure mapping (Bashe Ransomware Group / APT73), OpenPGP keyserver pivoting, and multi-platform entity-link correlation.</p>
                     <div class="project-tags" style="margin-top: 15px;">
-                        <span class="tag-sm">APT73 Attribution</span>
-                        <span class="tag-sm">Neo4j Graph</span>
-                        <span class="tag-sm">ASN &amp; C2 Recon</span>
-                        <span class="tag-sm">TLP:AMBER</span>
-                        <span class="tag-sm">maCERT / DGSSI</span>
-                    </div>
-                </div>
-                <div class="split-image">
-                    <img src="assets/images/OpsecOsint.jpg" alt="Bashe APT73 Infrastructure & Attribution Dossier">
-                </div>
-            </div>
-
-            <div class="split-layout reverse fade-in" style="margin-top: 80px;">
-                <div class="split-text">
-                    <h3 class="project-title" style="font-size: 1.5rem; margin-bottom: 8px;">Operation: Coinshaper — Crypto Fraud Forensics</h3>
-                    <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #2ed573; margin-bottom: 16px;">[ CLASSIFICATION: TLP:CLEAR // 50-NODE FORENSIC INVESTIGATION TREE ]</div>
-                    <p class="project-desc" style="font-size: 0.9rem;">Comprehensive 50-node forensic investigation exposing an advance-fee USDT fraud syndicate operating via Telegram (t.me/usdt_glitch_ma, 4,486 subscribers). Detected systematic address corruption in fabricated payout proofs (43-character EVM strings and illegal non-hex characters), reconstructed valid EIP-55 / EIP-7702 victim wallets across Ethereum &amp; BNB Smart Chain to prove zero on-chain token delivery, and correlated 9 ProtonMail accounts via exact OpenPGP key creation timestamps.</p>
-                    <div class="project-features" style="display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; margin: 16px 0; font-family: var(--font-mono); color: var(--text-secondary);">
-                        <span>[+] 43-Char EVM Corruption Recovery into Valid EIP-55 / EIP-7702 Wallets</span>
-                        <span>[+] 9 ProtonMail OpenPGP Key Timestamps &amp; Adobe UUID Pivoting</span>
-                        <span>[+] Regional Banking Rail Validation via Mod97 = 0 Checksums</span>
-                    </div>
-                    <div class="project-tags" style="margin-top: 15px;">
-                        <span class="tag-sm">Blockchain Forensics</span>
+                        <span class="tag-sm">Case Studies</span>
                         <span class="tag-sm">50-Node OSINT Tree</span>
-                        <span class="tag-sm">OpenPGP Pivoting</span>
-                        <span class="tag-sm">Mod97 Verification</span>
-                        <span class="tag-sm">Syndicate Attribution</span>
+                        <span class="tag-sm">Neo4j Graph</span>
+                        <span class="tag-sm">Threat Intel</span>
+                    </div>
+                    <div style="margin-top: 24px;">
+                        <a href="declassified.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.8rem;">◈ Access Declassified Dossiers ↗</a>
                     </div>
                 </div>
                 <div class="split-image">
-                    <div class="terminal-window" style="height: 100%; border: 1px solid var(--border);">
-                        <div class="terminal-header">
-                            <div class="terminal-dot red"></div>
-                            <div class="terminal-dot yellow"></div>
-                            <div class="terminal-dot green"></div>
-                            <span class="terminal-title">coinshaper_forensics.log</span>
-                        </div>
-                        <div class="terminal-body" style="font-size: 0.78rem; line-height: 1.65; color: var(--text-secondary);">
-                            <p class="terminal-line"><span class="prompt">$</span> <span class="command">osint-tree --verify-case coinshaper</span></p>
-                            <p>[+] Target Channel : t.me/usdt_glitch_ma (UID 7121379778)</p>
-                            <p>[+] Graph Topology : 50 Verified Nodes // 6 Forensic Phases</p>
-                            <p>[+] On-Chain Audit : 43-char EVM corruption -&gt; EIP-55 recovered</p>
-                            <p>[+] Token Delivery : 0.00 USDT verified across ETH / BSC / TRON</p>
-                            <p>[+] Keyserver Pivot: 9 ProtonMail OpenPGP timestamps matched</p>
-                            <p>[+] Banking Rails  : 3 Regional RIBs validated (Mod97 == 0)</p>
-                            <p>[+] Ethics Gate    : Unverified homonyms isolated &amp; excluded</p>
-                            <p class="terminal-line"><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
-                        </div>
-                    </div>
+                    <a href="declassified.html" style="display: block;">
+                        <img src="assets/images/OpsecOsint.jpg" alt="OPSEC &amp; Open Source Intelligence">
+                    </a>
                 </div>
             </div>
         </div>
