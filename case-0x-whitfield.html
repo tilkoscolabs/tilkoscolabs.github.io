@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .fade-in { opacity: 1 !important; transform: none !important; }
+        .graph-hover-img {
+            filter: grayscale(100%) contrast(1.12);
+            transition: filter 0.4s ease, transform 0.4s ease;
+        }
+        a:hover .graph-hover-img,
+        .terminal-window:hover .graph-hover-img {
+            filter: grayscale(0%) contrast(1);
+        }
         .case-summary {
             max-width: 780px;
             color: var(--text-secondary);
@@ -76,7 +84,7 @@
                 </div>
                 <div style="background: #000; padding: 12px;">
                     <a href="assets/images/coinshaper_tree.jpg" target="_blank" title="Open Full-Resolution 50-Node OSINT Investigation Graph">
-                        <img src="assets/images/coinshaper_tree.jpg" alt="TARGET: 0x [ Whitfield ] (@coinshaper) 50-Node OSINT Tree" style="width: 100%; height: auto; display: block; border-radius: 4px;">
+                        <img class="graph-hover-img" src="assets/images/coinshaper_tree.jpg" alt="TARGET: 0x [ Whitfield ] (@coinshaper) 50-Node OSINT Tree" style="width: 100%; height: auto; display: block; border-radius: 4px;">
                     </a>
                 </div>
             </div>
